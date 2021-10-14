@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Gruppeoppgave2.DAL
 {
-    public class StrekningRepository
+    public class StrekningRepository : IStrekningRepository
     {
         private readonly DB _db;
 

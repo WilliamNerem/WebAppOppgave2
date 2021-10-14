@@ -856,17 +856,17 @@
           "ref/netstandard1.3/Microsoft.Win32.Primitives.dll": {}
         }
       },
-      "Moq/4.13.1": {
+      "Moq/4.16.1": {
         "type": "package",
         "dependencies": {
           "Castle.Core": "4.4.0",
-          "System.Threading.Tasks.Extensions": "4.5.1"
+          "System.Threading.Tasks.Extensions": "4.5.4"
         },
         "compile": {
-          "lib/netstandard2.0/Moq.dll": {}
+          "lib/netstandard2.1/Moq.dll": {}
         },
         "runtime": {
-          "lib/netstandard2.0/Moq.dll": {}
+          "lib/netstandard2.1/Moq.dll": {}
         }
       },
       "Moq.EntityFrameworkCore/5.0.0.2": {
@@ -2289,7 +2289,7 @@
           "ref/netstandard1.3/System.Threading.Tasks.dll": {}
         }
       },
-      "System.Threading.Tasks.Extensions/4.5.1": {
+      "System.Threading.Tasks.Extensions/4.5.4": {
         "type": "package",
         "compile": {
           "ref/netcoreapp2.1/_._": {}
@@ -3815,10 +3815,10 @@
         "ref/xamarinwatchos10/_._"
       ]
     },
-    "Moq/4.13.1": {
-      "sha512": "ic4m9/b10tz9oRB1Oi5bW7E/FS6Pd2SH5OJFhlmhUJkQhiV5FyrIRxVUEaG5KOpSpcfSPGAVW4rRZt6OzrS5zg==",
+    "Moq/4.16.1": {
+      "sha512": "bw3R9q8cVNhWXNpnvWb0OGP4HadS4zvClq+T1zf7AF+tLY1haZ2AvbHidQekf4PDv1T40c6brZeT/V0IBq7cEQ==",
       "type": "package",
-      "path": "moq/4.13.1",
+      "path": "moq/4.16.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3826,8 +3826,11 @@
         "lib/net45/Moq.xml",
         "lib/netstandard2.0/Moq.dll",
         "lib/netstandard2.0/Moq.xml",
-        "moq.4.13.1.nupkg.sha512",
-        "moq.nuspec"
+        "lib/netstandard2.1/Moq.dll",
+        "lib/netstandard2.1/Moq.xml",
+        "moq.4.16.1.nupkg.sha512",
+        "moq.nuspec",
+        "moq.png"
       ]
     },
     "Moq.EntityFrameworkCore/5.0.0.2": {
@@ -7571,10 +7574,10 @@
         "system.threading.tasks.nuspec"
       ]
     },
-    "System.Threading.Tasks.Extensions/4.5.1": {
-      "sha512": "WSKUTtLhPR8gllzIWO2x6l4lmAIfbyMAiTlyXAis4QBDonXK4b4S6F8zGARX4/P8wH3DH+sLdhamCiHn+fTU1A==",
+    "System.Threading.Tasks.Extensions/4.5.4": {
+      "sha512": "zteT+G8xuGu6mS+mzDzYXbzS7rd3K6Fjb9RiZlYlJPam2/hU7JCBZBVEcywNuR+oZ1ncTvc/cq0faRr3P01OVg==",
       "type": "package",
-      "path": "system.threading.tasks.extensions/4.5.1",
+      "path": "system.threading.tasks.extensions/4.5.4",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -7582,6 +7585,8 @@
         "THIRD-PARTY-NOTICES.TXT",
         "lib/MonoAndroid10/_._",
         "lib/MonoTouch10/_._",
+        "lib/net461/System.Threading.Tasks.Extensions.dll",
+        "lib/net461/System.Threading.Tasks.Extensions.xml",
         "lib/netcoreapp2.1/_._",
         "lib/netstandard1.0/System.Threading.Tasks.Extensions.dll",
         "lib/netstandard1.0/System.Threading.Tasks.Extensions.xml",
@@ -7596,15 +7601,11 @@
         "ref/MonoAndroid10/_._",
         "ref/MonoTouch10/_._",
         "ref/netcoreapp2.1/_._",
-        "ref/netstandard1.0/System.Threading.Tasks.Extensions.dll",
-        "ref/netstandard1.0/System.Threading.Tasks.Extensions.xml",
-        "ref/netstandard2.0/System.Threading.Tasks.Extensions.dll",
-        "ref/netstandard2.0/System.Threading.Tasks.Extensions.xml",
         "ref/xamarinios10/_._",
         "ref/xamarinmac20/_._",
         "ref/xamarintvos10/_._",
         "ref/xamarinwatchos10/_._",
-        "system.threading.tasks.extensions.4.5.1.nupkg.sha512",
+        "system.threading.tasks.extensions.4.5.4.nupkg.sha512",
         "system.threading.tasks.extensions.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
@@ -7991,6 +7992,7 @@
     ".NETCoreApp,Version=v3.1": [
       "Gruppeoppgave2 >= 1.0.0",
       "Microsoft.NET.Test.Sdk >= 16.9.4",
+      "Moq >= 4.16.1",
       "Moq.EntityFrameworkCore >= 5.0.0.2",
       "coverlet.collector >= 3.0.2",
       "xunit >= 2.4.1",
@@ -7998,19 +8000,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Martin\\.nuget\\packages\\": {}
+    "C:\\Users\\William Nerem\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Martin\\Desktop\\Skole\\Webapplikasjoner\\WebAppOppgave2\\Gruppeoppgave2\\XUnitTestGruppeoppgave2\\XUnitTestGruppeoppgave2.csproj",
+      "projectUniqueName": "C:\\Users\\William Nerem\\Desktop\\Skole\\Webapp\\WebAppOppgave2\\Gruppeoppgave2\\XUnitTestGruppeoppgave2\\XUnitTestGruppeoppgave2.csproj",
       "projectName": "XUnitTestGruppeoppgave2",
-      "projectPath": "C:\\Users\\Martin\\Desktop\\Skole\\Webapplikasjoner\\WebAppOppgave2\\Gruppeoppgave2\\XUnitTestGruppeoppgave2\\XUnitTestGruppeoppgave2.csproj",
-      "packagesPath": "C:\\Users\\Martin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Martin\\Desktop\\Skole\\Webapplikasjoner\\WebAppOppgave2\\Gruppeoppgave2\\XUnitTestGruppeoppgave2\\obj\\",
+      "projectPath": "C:\\Users\\William Nerem\\Desktop\\Skole\\Webapp\\WebAppOppgave2\\Gruppeoppgave2\\XUnitTestGruppeoppgave2\\XUnitTestGruppeoppgave2.csproj",
+      "packagesPath": "C:\\Users\\William Nerem\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\William Nerem\\Desktop\\Skole\\Webapp\\WebAppOppgave2\\Gruppeoppgave2\\XUnitTestGruppeoppgave2\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Martin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\William Nerem\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -8018,14 +8020,14 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "https://www.nuget.org/api/v2/": {}
       },
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\Martin\\Desktop\\Skole\\Webapplikasjoner\\WebAppOppgave2\\Gruppeoppgave2\\Gruppeoppgave2\\Gruppeoppgave2.csproj": {
-              "projectPath": "C:\\Users\\Martin\\Desktop\\Skole\\Webapplikasjoner\\WebAppOppgave2\\Gruppeoppgave2\\Gruppeoppgave2\\Gruppeoppgave2.csproj"
+            "C:\\Users\\William Nerem\\Desktop\\Skole\\Webapp\\WebAppOppgave2\\Gruppeoppgave2\\Gruppeoppgave2\\Gruppeoppgave2.csproj": {
+              "projectPath": "C:\\Users\\William Nerem\\Desktop\\Skole\\Webapp\\WebAppOppgave2\\Gruppeoppgave2\\Gruppeoppgave2\\Gruppeoppgave2.csproj"
             }
           }
         }
@@ -8043,6 +8045,10 @@
           "Microsoft.NET.Test.Sdk": {
             "target": "Package",
             "version": "[16.9.4, )"
+          },
+          "Moq": {
+            "target": "Package",
+            "version": "[4.16.1, )"
           },
           "Moq.EntityFrameworkCore": {
             "target": "Package",
@@ -8080,7 +8086,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }

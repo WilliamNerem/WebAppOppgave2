@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Martin\\Desktop\\Skole\\Webapplikasjoner\\WebAppOppgave2\\Gruppeoppgave2\\XUnitTestGruppeoppgave2\\XUnitTestGruppeoppgave2.csproj": {}
+    "C:\\Users\\William Nerem\\Desktop\\Skole\\Webapp\\WebAppOppgave2\\Gruppeoppgave2\\XUnitTestGruppeoppgave2\\XUnitTestGruppeoppgave2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Martin\\Desktop\\Skole\\Webapplikasjoner\\WebAppOppgave2\\Gruppeoppgave2\\Gruppeoppgave2\\Gruppeoppgave2.csproj": {
+    "C:\\Users\\William Nerem\\Desktop\\Skole\\Webapp\\WebAppOppgave2\\Gruppeoppgave2\\Gruppeoppgave2\\Gruppeoppgave2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Martin\\Desktop\\Skole\\Webapplikasjoner\\WebAppOppgave2\\Gruppeoppgave2\\Gruppeoppgave2\\Gruppeoppgave2.csproj",
+        "projectUniqueName": "C:\\Users\\William Nerem\\Desktop\\Skole\\Webapp\\WebAppOppgave2\\Gruppeoppgave2\\Gruppeoppgave2\\Gruppeoppgave2.csproj",
         "projectName": "Gruppeoppgave2",
-        "projectPath": "C:\\Users\\Martin\\Desktop\\Skole\\Webapplikasjoner\\WebAppOppgave2\\Gruppeoppgave2\\Gruppeoppgave2\\Gruppeoppgave2.csproj",
-        "packagesPath": "C:\\Users\\Martin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Martin\\Desktop\\Skole\\Webapplikasjoner\\WebAppOppgave2\\Gruppeoppgave2\\Gruppeoppgave2\\obj\\",
+        "projectPath": "C:\\Users\\William Nerem\\Desktop\\Skole\\Webapp\\WebAppOppgave2\\Gruppeoppgave2\\Gruppeoppgave2\\Gruppeoppgave2.csproj",
+        "packagesPath": "C:\\Users\\William Nerem\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\William Nerem\\Desktop\\Skole\\Webapp\\WebAppOppgave2\\Gruppeoppgave2\\Gruppeoppgave2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Martin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\William Nerem\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,7 +22,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "https://www.nuget.org/api/v2/": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
@@ -87,21 +87,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Martin\\Desktop\\Skole\\Webapplikasjoner\\WebAppOppgave2\\Gruppeoppgave2\\XUnitTestGruppeoppgave2\\XUnitTestGruppeoppgave2.csproj": {
+    "C:\\Users\\William Nerem\\Desktop\\Skole\\Webapp\\WebAppOppgave2\\Gruppeoppgave2\\XUnitTestGruppeoppgave2\\XUnitTestGruppeoppgave2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Martin\\Desktop\\Skole\\Webapplikasjoner\\WebAppOppgave2\\Gruppeoppgave2\\XUnitTestGruppeoppgave2\\XUnitTestGruppeoppgave2.csproj",
+        "projectUniqueName": "C:\\Users\\William Nerem\\Desktop\\Skole\\Webapp\\WebAppOppgave2\\Gruppeoppgave2\\XUnitTestGruppeoppgave2\\XUnitTestGruppeoppgave2.csproj",
         "projectName": "XUnitTestGruppeoppgave2",
-        "projectPath": "C:\\Users\\Martin\\Desktop\\Skole\\Webapplikasjoner\\WebAppOppgave2\\Gruppeoppgave2\\XUnitTestGruppeoppgave2\\XUnitTestGruppeoppgave2.csproj",
-        "packagesPath": "C:\\Users\\Martin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Martin\\Desktop\\Skole\\Webapplikasjoner\\WebAppOppgave2\\Gruppeoppgave2\\XUnitTestGruppeoppgave2\\obj\\",
+        "projectPath": "C:\\Users\\William Nerem\\Desktop\\Skole\\Webapp\\WebAppOppgave2\\Gruppeoppgave2\\XUnitTestGruppeoppgave2\\XUnitTestGruppeoppgave2.csproj",
+        "packagesPath": "C:\\Users\\William Nerem\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\William Nerem\\Desktop\\Skole\\Webapp\\WebAppOppgave2\\Gruppeoppgave2\\XUnitTestGruppeoppgave2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Martin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\William Nerem\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -109,14 +109,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "https://www.nuget.org/api/v2/": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\Martin\\Desktop\\Skole\\Webapplikasjoner\\WebAppOppgave2\\Gruppeoppgave2\\Gruppeoppgave2\\Gruppeoppgave2.csproj": {
-                "projectPath": "C:\\Users\\Martin\\Desktop\\Skole\\Webapplikasjoner\\WebAppOppgave2\\Gruppeoppgave2\\Gruppeoppgave2\\Gruppeoppgave2.csproj"
+              "C:\\Users\\William Nerem\\Desktop\\Skole\\Webapp\\WebAppOppgave2\\Gruppeoppgave2\\Gruppeoppgave2\\Gruppeoppgave2.csproj": {
+                "projectPath": "C:\\Users\\William Nerem\\Desktop\\Skole\\Webapp\\WebAppOppgave2\\Gruppeoppgave2\\Gruppeoppgave2\\Gruppeoppgave2.csproj"
               }
             }
           }
@@ -134,6 +134,10 @@
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
               "version": "[16.9.4, )"
+            },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.16.1, )"
             },
             "Moq.EntityFrameworkCore": {
               "target": "Package",
@@ -171,7 +175,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }
