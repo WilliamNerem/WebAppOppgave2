@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace EF_2.Models
+namespace Gruppeoppgave2.Models
 {
     public class Strekning
     {
