@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31624.102
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gruppeoppgave2", "Gruppeoppgave2\Gruppeoppgave2.csproj", "{CDA05A55-D748-4741-A3BB-2C60CECDDF47}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gruppeoppgave2", "Gruppeoppgave2\Gruppeoppgave2.csproj", "{CDA05A55-D748-4741-A3BB-2C60CECDDF47}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XUnitTestGruppeoppgave2", "XUnitTestGruppeoppgave2\XUnitTestGruppeoppgave2.csproj", "{0E1F0FC3-6389-49B1-A85F-931C12310713}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{CDA05A55-D748-4741-A3BB-2C60CECDDF47}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CDA05A55-D748-4741-A3BB-2C60CECDDF47}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CDA05A55-D748-4741-A3BB-2C60CECDDF47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E1F0FC3-6389-49B1-A85F-931C12310713}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E1F0FC3-6389-49B1-A85F-931C12310713}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E1F0FC3-6389-49B1-A85F-931C12310713}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E1F0FC3-6389-49B1-A85F-931C12310713}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

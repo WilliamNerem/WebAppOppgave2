@@ -1,9 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
 
-namespace EF_2.Models
+namespace Gruppeoppgave2.Models
 {
-    public class DB : DbContext
+    public class DB:DbContext
     {       
         public DB(DbContextOptions<DB> options) : base(options)
         {
