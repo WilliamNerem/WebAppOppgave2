@@ -1,3 +1,4 @@
+using EF_2.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -21,6 +22,7 @@ namespace Gruppeoppgave2
         public void ConfigureServices(IServiceCollection services)
         {
 
+            services.AddDbContext<DataContext>(options => options.UseSqlite("Data Source=Strekning.db"));
             services.AddControllersWithViews();
 
             // In production, the React files will be served from this directory
@@ -36,6 +38,7 @@ namespace Gruppeoppgave2
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                DBInit.init(app);
             }
             else
             {
