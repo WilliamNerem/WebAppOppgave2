@@ -1,11 +1,11 @@
 ﻿import React from 'react';
 
-const Button = ({ children, onClick, btnColor = 'teal', labelColor, disabled, type, style, ...props }) => {
-    return (
-        <button className="btn btn-primary">
-            {children || 'Logg inn'}
-        </button>
-    );
-};
+export class Button extends React.Component {
 
-export default Button;
+
+    render() {
+        return (
+            <input type="submit" value={this.props.text} className="btn btn-primary"></input>
+        );
+    }
+}
