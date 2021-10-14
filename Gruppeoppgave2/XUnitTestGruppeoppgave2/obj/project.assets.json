@@ -7998,19 +7998,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Martin\\.nuget\\packages\\": {}
+    "C:\\Users\\maren\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Martin\\Desktop\\Skole\\Webapplikasjoner\\WebAppOppgave2\\Gruppeoppgave2\\XUnitTestGruppeoppgave2\\XUnitTestGruppeoppgave2.csproj",
+      "projectUniqueName": "C:\\Users\\maren\\OneDrive\\Dokumenter\\IT\\Webapplikasjoner\\WebAppOppgave2\\Gruppeoppgave2\\XUnitTestGruppeoppgave2\\XUnitTestGruppeoppgave2.csproj",
       "projectName": "XUnitTestGruppeoppgave2",
-      "projectPath": "C:\\Users\\Martin\\Desktop\\Skole\\Webapplikasjoner\\WebAppOppgave2\\Gruppeoppgave2\\XUnitTestGruppeoppgave2\\XUnitTestGruppeoppgave2.csproj",
-      "packagesPath": "C:\\Users\\Martin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Martin\\Desktop\\Skole\\Webapplikasjoner\\WebAppOppgave2\\Gruppeoppgave2\\XUnitTestGruppeoppgave2\\obj\\",
+      "projectPath": "C:\\Users\\maren\\OneDrive\\Dokumenter\\IT\\Webapplikasjoner\\WebAppOppgave2\\Gruppeoppgave2\\XUnitTestGruppeoppgave2\\XUnitTestGruppeoppgave2.csproj",
+      "packagesPath": "C:\\Users\\maren\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\maren\\OneDrive\\Dokumenter\\IT\\Webapplikasjoner\\WebAppOppgave2\\Gruppeoppgave2\\XUnitTestGruppeoppgave2\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Martin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\maren\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -8024,8 +8024,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\Martin\\Desktop\\Skole\\Webapplikasjoner\\WebAppOppgave2\\Gruppeoppgave2\\Gruppeoppgave2\\Gruppeoppgave2.csproj": {
-              "projectPath": "C:\\Users\\Martin\\Desktop\\Skole\\Webapplikasjoner\\WebAppOppgave2\\Gruppeoppgave2\\Gruppeoppgave2\\Gruppeoppgave2.csproj"
+            "C:\\Users\\maren\\OneDrive\\Dokumenter\\IT\\Webapplikasjoner\\WebAppOppgave2\\Gruppeoppgave2\\Gruppeoppgave2\\Gruppeoppgave2.csproj": {
+              "projectPath": "C:\\Users\\maren\\OneDrive\\Dokumenter\\IT\\Webapplikasjoner\\WebAppOppgave2\\Gruppeoppgave2\\Gruppeoppgave2\\Gruppeoppgave2.csproj"
             }
           }
         }
@@ -8080,7 +8080,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }
