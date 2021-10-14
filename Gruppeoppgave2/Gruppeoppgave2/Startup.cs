@@ -1,5 +1,6 @@
 using Gruppeoppgave2.DAL;
 using Gruppeoppgave2.Models;
+using GruppeOppgave2.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -31,7 +32,7 @@ namespace Gruppeoppgave2
             {
                 configuration.RootPath = "ClientApp/build";
             });
-            services.AddDbContext<Strekning>(options => options.UseSqlite("Data Source=Strekning.db"));
+            services.AddDbContext<DB>(options => options.UseSqlite("Data Source=Strekning.db"));
             services.AddScoped<StrekningRepository>();
         }
 
