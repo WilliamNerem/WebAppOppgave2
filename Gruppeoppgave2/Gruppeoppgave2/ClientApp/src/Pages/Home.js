@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { InputField } from './InputField';
-import { Button } from './Button';
+import { InputField } from '../components/InputField';
+import { Button } from '../components/Button';
 
 let uname = "";
 let pwd = "";
