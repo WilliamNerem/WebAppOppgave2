@@ -10,21 +10,23 @@ export function HentAlle() {
     }
 
     function formaterStrekninger(strekninger) {
-        let ut = " <table className='table'>" +
+        let ut = " <table class='table'>" +
             "<thead>" +
-            "<tr>" +
+            "<tr class='table-primary'>" +
+            "<th scope='col'>#</th>" +
             "<th scope='col'>Strekning:</th>" +
             "<th scope='col'>Pris:</th>" +
             "</tr>" +
             "</thead >" +
-            "<body>";
+            "<tbody>";
         for (let strekning of strekninger) {
             ut += "<tr>" +
+                "<th scope='row'>" + strekning.id + "</th>" +
                 "<td>" + strekning.navn + "</td>" +
                 "<td>" + strekning.pris + "</td>" +
                 "</tr>";
         }
-        ut += "</body>" +
+        ut += "</tbody>" +
             "</table >";
         document.getElementById("strekningene").innerHTML = ut;
     }
