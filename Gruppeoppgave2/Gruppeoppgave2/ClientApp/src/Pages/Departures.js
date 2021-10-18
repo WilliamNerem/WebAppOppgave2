@@ -1,10 +1,10 @@
 ﻿import React from 'react';
-import $ from 'jquery';
+import { DeleteButton } from '../components/DeleteButton';
 import { HentAlle } from '../components/HentAlle';
 
 export function Departures() {
 
-    return (
-        <HentAlle/>
+    return (        <div>
+            <HentAlle />            <DeleteButton />        </div>
         );
 }
