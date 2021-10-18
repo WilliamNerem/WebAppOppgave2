@@ -1,32 +1,37 @@
 ﻿import React, { Component } from 'react';
+import $ from 'jquery';
+let ut = "";
 
-export class Departures extends Component {
-    static displayName = Departures.name;
+export function Departures() {
 
-    //legge til, slette og endre strekninger, avganger og priser
-
-    render() {
-        return (
-            <div>
-                <table className='table'>
-                    <thead>
-                        <tr>
-                            <th scope='col'>Strekning:</th>
-                            <th scope='col'>Pris:</th>
-                        </tr>
-                    </thead>
-                    <body>
-                        <tr>
-                            <td>Oslo-Kiel</td>
-                            <td>1999 kr</td>
-                        </tr>
-                        <tr>
-                            <td>Kiel-Oslo</td>
-                            <td>1999 kr</td>
-                        </tr>
-                    </body>
-                </table>
-            </div>
-        );
+    function hentAlleStrekninger() {
+        $.getJSON("strekning/hentAlle", function (strekninger) {
+            formaterStrekninger(strekninger);
+            console.log(strekninger)
+        });
     }
+
+    function formaterStrekninger(strekninger) {
+        ut += " <table className='table'>" +
+            "< thead >" +
+            "<tr>" +
+            "<th scope='col'>Strekning:</th>" +
+            "<th scope='col'>Pris:</th>" +
+            "</tr>" +
+            "</thead >" +
+            "<body>";
+        for (let strekning of strekninger) {
+            ut += "<tr>" +
+                "<td>" + strekning.navn + "</td>" +
+                "<td>" + strekning.pris + "</td>" +
+                "</tr>";
+        }
+        ut += "</body>" +
+            "</table >";
+    }
+    hentAlleStrekninger();
+    console.log(ut)
+    return (
+        <div id="strekningene"> {ut} </div>
+    );
 }

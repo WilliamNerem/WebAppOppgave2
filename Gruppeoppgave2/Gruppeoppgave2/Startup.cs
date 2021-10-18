@@ -33,7 +33,7 @@ namespace Gruppeoppgave2
                 configuration.RootPath = "ClientApp/build";
             });
             services.AddDbContext<DB>(options => options.UseSqlite("Data Source=Strekning.db"));
-            services.AddScoped<StrekningRepository>();
+            services.AddScoped<IStrekningRepository, StrekningRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
