@@ -1,38 +1,23 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { InputField } from './InputField';
 import { Button } from './Button';
 
-let uname = "";
-let pwd = "";
 
-export class Home extends Component {
+export function Home() {
+    const [username, setUsername] = useState();
+    const [password, setPassword] = useState();
 
-    static displayName = Home.name;
-
-    username(value) {
-        console.log(value);
-        uname = value;
+    function handleSubmit(e) {
+        if ((username !== "admin") || (password !== "admin")) {
+            e.preventDefault();
+        }
     }
 
-    password(value) {
-        pwd = value;
-    }
-
-    validateAdmin() {
-        console.log(uname);
-        if ((uname !== "hei") || (pwd !== "123")) {
-            return false;
-        } 
-    }
-    
-
-  render () {
-      return (
-          <form action="/departures" onSubmit={this.validateAdmin()}>
-              <InputField onChange={this.username} name="Brukernavn" InputField="Brukernavn: " />
-              <InputField onChange={this.password} name="Passord" InputField="Passord: " />
+    return (
+        <form action="/departures" onSubmit={handleSubmit}>
+            <InputField state={setUsername} name="Brukernavn" InputField="Brukernavn: " />
+            <InputField state={setPassword} name="Passord" InputField="Passord: " />
             <Button text="Logg Inn" />
-      </form>
-    );
-  }
+        </form>
+        );
 }
