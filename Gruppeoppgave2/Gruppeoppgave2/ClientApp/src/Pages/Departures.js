@@ -4,7 +4,7 @@ import { HentAlle } from '../components/HentAlle';
 
 export function Departures() {
 
-    return (
-        <HentAlle/>
-        );
+    return (
+        <HentAlle/>
+        );
 }
