@@ -4,7 +4,11 @@ import { HentAlle } from '../components/HentAlle';
 
 export function Departures() {
 
-    return (        <div>
-            <HentAlle />            <DeleteButton />        </div>
-        );
+    return (
+        <div>
+            <HentAlle />
+            <DeleteButton />
+        </div>
+        );
+
 }
