@@ -6,6 +6,7 @@ using System;
 using System.Threading.Tasks;
 using XUnitTestGruppeoppgave2;
 using System.Collections.Generic;
+using Xunit;
 
 namespace XUnitTestGruppeoppgave2
 {
