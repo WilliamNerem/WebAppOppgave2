@@ -7,7 +7,6 @@ export function Departures() {
     return (
         <div>
             <HentAlle />
-            <DeleteButton />
         </div>
         );
 

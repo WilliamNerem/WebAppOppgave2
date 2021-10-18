@@ -1,7 +1,9 @@
-﻿import React from 'react';
+﻿import React, { useState } from 'react';
+import { DeleteButton } from '../components/DeleteButton';
 import $ from 'jquery';
 
 export function HentAlle() {
+    const [ut, setUt] = useState();
 
     function hentAlleStrekninger() {
         $.getJSON("strekning/hentAlle", function (strekninger) {
@@ -10,30 +12,34 @@ export function HentAlle() {
     }
 
     function formaterStrekninger(strekninger) {
-        let ut = " <table class='table'>" +
-            "<thead>" +
-            "<tr class='table-primary'>" +
-            "<th scope='col'>#</th>" +
-            "<th scope='col'>Strekning:</th>" +
-            "<th scope='col'>Pris:</th>" +
-            "</tr>" +
-            "</thead >" +
-            "<tbody>";
+        let arr = [];
         for (let strekning of strekninger) {
-            ut += "<tr>" +
-                "<th scope='row'>" + strekning.id + "</th>" +
-                "<td>" + strekning.navn + "</td>" +
-                "<td>" + strekning.pris + "</td>" +
-                "</tr>";
+            arr.push(<tr>
+                <th scope="row">{strekning.id}</th>
+                <td>{strekning.navn}</td>
+                <td>{strekning.pris}</td>
+                <td><DeleteButton id={strekning.id} /></td>
+            </tr>);
         }
-        ut += "</tbody>" +
-            "</table >";
-        document.getElementById("strekningene").innerHTML = ut;
+        setUt(arr);
     }
-
     hentAlleStrekninger();
 
     return (
-        <div id="strekningene"></div>
+        <div id="strekningene">
+            <table className="table">
+                <thead>
+                    <tr className="table-primary">
+                        <th scope="col">#</th>
+                        <th scope="col">Strekning:</th>
+                        <th scope="col">Pris:</th>
+                        <th scope="col">Knapper:</th>
+                    </tr>
+                </thead >
+                <tbody>
+                    { ut }
+                </tbody>
+            </table>
+        </div>
     );
 }

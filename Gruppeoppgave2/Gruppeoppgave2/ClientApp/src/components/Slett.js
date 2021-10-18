@@ -1,12 +1,12 @@
 ﻿import React from 'react';
 import $ from 'jquery';
 
-export function Slett() {
+export function Slett(props) {
 
-    function slettStrekning(id) {
-        $.get(url, function (OK) {
+    function slettStrekning() {
+        $.get("strekning/slett?id=" + props.id, function (OK) {
             if (OK) {
-                window.location.href = 'index.html';
+                location.reload();
             }
             else {
                 $("#feil").html("Feil i db - vennligst forsøk igjen");
