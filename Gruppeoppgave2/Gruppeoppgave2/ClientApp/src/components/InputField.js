@@ -1,29 +1,14 @@
 ﻿import React from 'react';
 
-export class InputField extends React.Component {
-
-
-    constructor(props) {
-        super(props);
-        this.state = {
-            username: null,
-            password: null
-        };
+export function InputField(props) {
+    function handleChange(value) {
+        const str = value.target.value;
+        props.state(str);
     }
 
-    setUsername = (uname) => {
-        this.setState({ username: uname });
-    }
-
-    setPassword = (pwd) => {
-        this.setState({ password: pwd });
-    }
-
-    render() {
-        return (
-            <label>{this.props.InputField}
-                <input onChange={this.setUsername} type="text" />
-            </label>
-        );
-    }
+    return (
+        <label>{ props.InputField }
+            <input onChange={ handleChange } type="text" />
+        </label>
+    );
 }
