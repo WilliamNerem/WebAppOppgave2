@@ -4,7 +4,7 @@ using Gruppeoppgave2.Controllers;
 using Moq;
 using System;
 using System.Threading.Tasks;
-using Xunit;
+using XUnitTestGruppeoppgave2;
 using System.Collections.Generic;
 
 namespace XUnitTestGruppeoppgave2
