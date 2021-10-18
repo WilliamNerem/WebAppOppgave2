@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import 'bootstrap/dist/js/bootstrap';
 import { Route } from 'react-router';
-import { Layout } from './components/Layout';
-import { Home } from './components/Home';
+import { Layout } from './Pages/Layout';
+import { Home } from './Pages/Home';
 
 import './custom.css'
-import { Departures } from './components/Departures';
+import { Departures } from './Pages/Departures';
 
 export default class App extends Component {
     static displayName = App.name;
