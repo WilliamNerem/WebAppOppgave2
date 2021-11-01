@@ -1,5 +1,5 @@
 ﻿import React, {useState} from 'react';
-import { FormStrekning } from '../components/FormStrekning';
+import { FormEditStrekning } from '../components/FormEditStrekning';
 import $ from 'jquery';
 
 export function EditStrekning() {
@@ -18,7 +18,7 @@ export function EditStrekning() {
 
     return (
         <div>
-            <FormStrekning textStrekning={strekningen} textPris={pris} />
+            <FormEditStrekning textStrekning={strekningen} textPris={pris} />
         </div>
     );
 

@@ -53,8 +53,8 @@ export function FormStrekning(props) {
 
     return (
         <form action="/departures" onSubmit={validateForm}>
-            <InputField testing={props.textStrekning} errorMsg={errorStrekning} state={setStrekning} name="Strekning" InputField="Strekning: " />
-            <InputField testing={props.textPris} errorMsg={errorPris} state={setPris} name="Pris" InputField="Pris: " />
+            <InputField errorMsg={errorStrekning} state={setStrekning} name="Strekning" InputField="Strekning: " />
+            <InputField errorMsg={errorPris} state={setPris} name="Pris" InputField="Pris: " />
             <Button text="Legg til" />
         </form>
     );

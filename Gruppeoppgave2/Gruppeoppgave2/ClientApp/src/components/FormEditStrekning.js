@@ -11,12 +11,15 @@ export function FormEditStrekning(props) {
     const validStrekning = new RegExp('^[A-Z][a-z]+ - [A-Z][a-z]+$');
     const validPris = new RegExp('^[0-9]+$');
 
-    function add() {
+    const id = window.location.search.substring(1);
+
+    function edit() {
         const nyStrekning = {
+            id: id,
             navn: strekning,
             pris: pris
         };
-        $.post("strekning/Lagre", nyStrekning, function (OK) {
+        $.post("strekning/Endre", nyStrekning, function (OK) {
             if (!OK) {
                 $("#feil").html("Feil i db, vennligst forsøk igjen");
             }
@@ -47,7 +50,7 @@ export function FormEditStrekning(props) {
         }
 
         if (!error) {
-            add();
+            edit();
         }
     }
 
@@ -55,7 +58,7 @@ export function FormEditStrekning(props) {
         <form action="/departures" onSubmit={validateForm}>
             <InputField testing={props.textStrekning} errorMsg={errorStrekning} state={setStrekning} name="Strekning" InputField="Strekning: " />
             <InputField testing={props.textPris} errorMsg={errorPris} state={setPris} name="Pris" InputField="Pris: " />
-            <Button text="Legg til" />
+            <Button text="Endre" />
         </form>
     );
 }
