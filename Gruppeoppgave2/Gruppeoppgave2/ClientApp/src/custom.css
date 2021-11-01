@@ -41,6 +41,10 @@ nav {
     padding-left: 3px;
 }
 
+.editIcon:hover{
+    color: white;
+}
+
 .errorMsg {
     color: red;
 }

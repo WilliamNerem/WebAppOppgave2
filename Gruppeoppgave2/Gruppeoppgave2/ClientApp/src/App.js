@@ -3,6 +3,7 @@ import 'bootstrap/dist/js/bootstrap';
 import { Route } from 'react-router';
 import { Layout } from './Pages/Layout';
 import { Home } from './Pages/Home';
+import { EditStrekning } from './Pages/EditStrekning';
 
 import './custom.css'
 import { Departures } from './Pages/Departures';
@@ -17,6 +18,7 @@ export default class App extends Component {
             <Route exact path='/' component={Home} />
             <Route exact path='/departures' component={Departures} />
             <Route exact path='/addStrekning' component={NewStrekning} />
+            <Route exact path='/editStrekning' component={EditStrekning} />
       </Layout>
     );
   }
