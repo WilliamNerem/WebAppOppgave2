@@ -17,7 +17,7 @@ export class NavBar extends Component {
                                 <a className="nav-link active text-light" aria-current="page" href="/">Hjem</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link active text-light" aria-current="page" href="/departures">Avganger</a>
+                                <a className="nav-link active text-light" aria-current="page" href="/departures">Strekninger</a>
                             </li>
                         </ul>
                     </div>
