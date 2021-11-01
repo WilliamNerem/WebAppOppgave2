@@ -56,9 +56,19 @@ namespace Gruppeoppgave2.Controllers
             return Ok(alleStrekninger);
         }
 
-        public async Task<bool> Slett(int id)
+        public async Task<ActionResult> Slett(int id)
         {
-            return await _db.Slett(id);
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString(_loggetInn)))
+            {
+                return Unauthorized("Ikke logget inn");
+            }
+            bool returOK = await _db.Slett(id);
+            if (!returOK)
+            {
+                _log.LogInformation("Sletting av strekningen ble ikke utført");
+                return NotFound("Sletting av strekningen ble ikke utført");
+            }
+            return Ok("Strekning slettet");
         }
 
         public async Task<ActionResult> HentEn(int id)
@@ -76,9 +86,24 @@ namespace Gruppeoppgave2.Controllers
             return Ok(strekningen);
         }
 
-        public async Task<bool> Endre(Strekning endreStrekning)
+        public async Task<ActionResult> Endre(Strekning endreStrekning)
         {
-            return await _db.Endre(endreStrekning);
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString(_loggetInn)))
+            {
+                return Unauthorized("Ikke logget inn");
+            }
+            if (ModelState.IsValid)
+            {
+                bool returOK = await _db.Endre(endreStrekning);
+                if (!returOK)
+                {
+                    _log.LogInformation("Endringen kunne ikke utføres");
+                    return NotFound("Endringen av strekningen kunne ikke utføres");
+                }
+                return Ok("Strekningen er endret");
+            }
+            _log.LogInformation("Feil i inputvalidering");
+            return BadRequest("Feil i inputvalidering på server");
         }
 
         public async Task<ActionResult> LoggInn(Admin admin)
