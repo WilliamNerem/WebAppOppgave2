@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+﻿import React, { useEffect, useState } from 'react';
 import { DeleteButton } from '../components/DeleteButton';
 import $ from 'jquery';
 import { EditButton } from './EditButton';
@@ -6,7 +6,7 @@ import { EditButton } from './EditButton';
 export function HentAlle() {
     const [ut, setUt] = useState();
     const formatButtons = {
-        display: 'flex',
+        display: 'flex'
     };
 
     function hentAlleStrekninger() {
@@ -32,8 +32,6 @@ export function HentAlle() {
         }
         setUt(arr);
     }
-    hentAlleStrekninger();
-
     return (
         <div id="strekningene">
             <table className="table">
