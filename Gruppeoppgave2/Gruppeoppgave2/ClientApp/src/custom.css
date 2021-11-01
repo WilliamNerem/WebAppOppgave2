@@ -19,6 +19,7 @@ nav {
 }
 
 .deleteButton{
+    margin-right: 8px;
     font-size: 24px;
     width: 32px;
     display: flex;
@@ -27,4 +28,19 @@ nav {
 
 .deleteIcon{
     padding-left: 3px;
+}
+
+.ediButton {
+    font-size: 24px;
+    width: 32px;
+    display: flex;
+    padding: 3px;
+}
+
+.editIcon {
+    padding-left: 3px;
+}
+
+.errorMsg {
+    color: red;
 }

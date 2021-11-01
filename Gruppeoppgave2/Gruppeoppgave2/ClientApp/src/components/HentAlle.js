@@ -1,9 +1,13 @@
 ﻿import React, { useState } from 'react';
 import { DeleteButton } from '../components/DeleteButton';
 import $ from 'jquery';
+import { EditButton } from './EditButton';
 
 export function HentAlle() {
     const [ut, setUt] = useState();
+    const formatButtons = {
+        display: 'flex',
+    };
 
     function hentAlleStrekninger() {
         $.getJSON("strekning/hentAlle", function (strekninger) {
@@ -18,7 +22,7 @@ export function HentAlle() {
                 <th scope="row">{strekning.id}</th>
                 <td>{strekning.navn}</td>
                 <td>{strekning.pris}</td>
-                <td><DeleteButton id={strekning.id} /></td>
+                <td><div style={formatButtons}><DeleteButton id={strekning.id} /><EditButton id={strekning.id} /></div></td>
             </tr>);
         }
         setUt(arr);

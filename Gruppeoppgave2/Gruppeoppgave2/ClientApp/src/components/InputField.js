@@ -7,8 +7,11 @@ export function InputField(props) {
     }
 
     return (
-        <label>{ props.InputField }
-            <input onChange={ handleChange } type="text" />
-        </label>
+        <div>
+            <label>{ props.InputField }
+                <input className="form-control" onChange={handleChange} type="text" />
+            </label>
+            <p className="errorMsg">{props.errorMsg}</p>
+        </div>
     );
 }

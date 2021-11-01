@@ -6,6 +6,7 @@ import { Home } from './Pages/Home';
 
 import './custom.css'
 import { Departures } from './Pages/Departures';
+import { NewStrekning } from './Pages/NewStrekning';
 
 export default class App extends Component {
     static displayName = App.name;
@@ -15,6 +16,7 @@ export default class App extends Component {
       <Layout>
             <Route exact path='/' component={Home} />
             <Route exact path='/departures' component={Departures} />
+            <Route exact path='/addStrekning' component={NewStrekning} />
       </Layout>
     );
   }
