@@ -9,16 +9,21 @@ export function HentAlle() {
         display: 'flex'
     };
 
-    function hentAlleStrekninger() {
+    useEffect(() => {
         $.get("strekning/hentAlle", function (strekninger) {
             formaterStrekninger(strekninger);
         })
             .fail(function (feil) {
-                if (feil.status == 401) {
-                    window.location.href = "/"
-                }
+                if (feil.status == 401) {
+
+                    window.location.href = "/"
+
+                }
+
             });
-    }
+    }, []);
+   
+    
 
     function formaterStrekninger(strekninger) {
         let arr = [];
