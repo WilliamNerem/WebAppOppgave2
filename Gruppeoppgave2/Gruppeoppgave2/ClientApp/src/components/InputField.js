@@ -9,7 +9,7 @@ export function InputField(props) {
     return (
         <div>
             <label>{ props.InputField }
-                <input className="form-control" onChange={handleChange} type="text" ></input>
+                <input className="form-control" value={props.testing} onChange={handleChange} type="text" ></input>
             </label>
             <p className="errorMsg">{props.errorMsg}</p>
         </div>

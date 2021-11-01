@@ -3,17 +3,16 @@ import { FormStrekning } from '../components/FormStrekning';
 import $ from 'jquery';
 
 export function EditStrekning() {
-    const [id, setId] = useState();
     const [strekningen, setStrekningen] = useState();
     const [pris, setPris] = useState();
 
-    
-    const test = window.location.search.substring(1);
-    $.get("strekning/hentEn?" + test, function (strekning) {
-        setId(strekning.id);
-        setStrekningen(strekning.navn);
-        setPris(strekning.pris);
-    });
+    useState(() => {
+        const test = window.location.search.substring(1);
+        $.get("strekning/hentEn?id=" + test, function (strekning) {
+            setStrekningen(strekning.navn);
+            setPris(strekning.pris);
+        });
+    }, []);
 
     
 

@@ -3,7 +3,7 @@ import { InputField } from '../components/InputField';
 import { Button } from '../components/Button';
 import $ from 'jquery';
 
-export function FormStrekning(props) {
+export function FormEditStrekning(props) {
     const [strekning, setStrekning] = useState();
     const [pris, setPris] = useState();
     const [errorStrekning, setErrorStrekning] = useState("");
@@ -21,11 +21,11 @@ export function FormStrekning(props) {
                 $("#feil").html("Feil i db, vennligst forsøk igjen");
             }
         })
-        .fail(function (feil) {
-            if (feil.status == 401) {
-                window.location.href = "/"
-            }
-        });
+            .fail(function (feil) {
+                if (feil.status == 401) {
+                    window.location.href = "/"
+                }
+            });
     }
 
     function validateForm(e) {
