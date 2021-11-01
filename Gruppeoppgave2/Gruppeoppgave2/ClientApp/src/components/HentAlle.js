@@ -8,12 +8,17 @@ export function HentAlle() {
     const formatButtons = {
         display: 'flex'
     };
-    useEffect(() => {
-        $.getJSON("strekning/hentAlle", function (strekninger) {
+
+    function hentAlleStrekninger() {
+        $.get("strekning/hentAlle", function (strekninger) {
             formaterStrekninger(strekninger);
-        });
-    }, []);
-    
+        })
+            .fail(function (feil) {
+                if (feil.status == 401) {
+                    window.location.href = "/"
+                }
+            });
+    }
 
     function formaterStrekninger(strekninger) {
         let arr = [];

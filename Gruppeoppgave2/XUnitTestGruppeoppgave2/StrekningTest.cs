@@ -7,14 +7,30 @@ using System.Threading.Tasks;
 using XUnitTestGruppeoppgave2;
 using System.Collections.Generic;
 using Xunit;
+using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using System.Net;
 
 namespace XUnitTestGruppeoppgave2
 {
     public class StrekningTest
     {
+        private const string _loggetInn = "loggetInn";
+        private const string _ikkeLoggetInn = "";
+
+        private readonly Mock<IStrekningRepository> mockRep = new Mock<IStrekningRepository>();
+        private readonly Mock<ILogger<StrekningController>> mockLog = new Mock<ILogger<StrekningController>>();
+
+        private readonly Mock<HttpContext> mockHttpContext = new Mock<HttpContext>();
+        private readonly MockHttpSession mockSession = new MockHttpSession();
+
+
+
+
         [Fact]
 
-        public async Task HentAlle()
+        public async Task HentAlleLoggetInnOK()
         {
             var strekning1 = new Strekning
             {
@@ -41,10 +57,17 @@ namespace XUnitTestGruppeoppgave2
             strekningListe.Add(strekning2);
             strekningListe.Add(strekning3);
 
-            var mock = new Mock<IStrekningRepository>();
-            mock.Setup(s => s.HentAlle()).ReturnsAsync(strekningListe);
-            var strekningController = new StrekningController(mock.Object);
-            List<Strekning> resultat = await strekningController.HentAlle();
+            mockRep.Setup(s => s.HentAlle()).ReturnsAsync(strekningListe);
+
+            var strekningController = new StrekningController(mockRep.Object, mockLog.Object);
+
+            mockSession[_loggetInn] = _loggetInn;
+            mockHttpContext.Setup(s => s.Session).Returns(mockSession);
+            strekningController.ControllerContext.HttpContext = mockHttpContext.Object;
+
+            var resultat = await strekningController.HentAlle() as OkObjectResult;
+
+            Assert.Equal((int)HttpStatusCode.OK, resultat.StatusCode);
             Assert.Equal<List<Strekning>>(strekningListe, resultat);
         }
 
