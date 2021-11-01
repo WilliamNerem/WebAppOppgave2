@@ -8,6 +8,11 @@ export function DeleteButton(props) {
             if (!OK) {
                 $("#feil").html("Feil i db - vennligst forsøk igjen");
             }
+        })
+        .fail(function (feil) {
+            if (feil.status == 401) {
+                window.location.href = "/"
+            }
         });
     }
 

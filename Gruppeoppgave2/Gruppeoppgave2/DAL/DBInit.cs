@@ -1,4 +1,5 @@
-﻿using Gruppeoppgave2.Models;
+﻿using Gruppeoppgave2.DAL;
+using Gruppeoppgave2.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -77,6 +78,16 @@ namespace GruppeOppgave2.Models
                 context.Strekning.Add(nyStrekning6);
                 context.Strekning.Add(nyStrekning4);
                 context.Strekning.Add(nyStrekning8);
+
+                var admin = new Adminer();
+                admin.Brukernavn = "Admin";
+                string passord = "EtBraPassord123";
+                byte[] salt = StrekningRepository.LagSalt();
+                byte[] hash = StrekningRepository.LagHash(passord, salt);
+                admin.Passord = hash;
+                admin.Salt = salt;
+                context.Adminer.Add(admin);
+
                 context.SaveChanges();
             }
         }

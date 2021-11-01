@@ -13,5 +13,6 @@ namespace Gruppeoppgave2.DAL
         Task<bool> Slett(int id);
         Task<Strekning> HentEn(int id);
         Task<bool> Endre(Strekning endreStrekning);
+        Task<bool> LoggInn(Admin admin);
     }
 }

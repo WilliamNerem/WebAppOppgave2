@@ -10,9 +10,14 @@ export function HentAlle() {
     };
 
     function hentAlleStrekninger() {
-        $.getJSON("strekning/hentAlle", function (strekninger) {
+        $.get("strekning/hentAlle", function (strekninger) {
             formaterStrekninger(strekninger);
-        });
+        })
+            .fail(function (feil) {
+                if (feil.status == 401) {
+                    window.location.href = "/"
+                }
+            });
     }
 
     function formaterStrekninger(strekninger) {

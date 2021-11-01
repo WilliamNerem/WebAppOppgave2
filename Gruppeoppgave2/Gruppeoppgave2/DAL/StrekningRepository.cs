@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using Microsoft.Extensions.Logging;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Cryptography.KeyDerivation;
+using System.Security.Cryptography;
 
 namespace Gruppeoppgave2.DAL
 {
@@ -33,9 +35,9 @@ namespace Gruppeoppgave2.DAL
                 _log.LogInformation("Strekningen " + nyStrekningRad.Navn + " ble lagret");
                 return true;
             }
-            catch
+            catch (Exception e)
             {
-                _log.LogInformation("Strekning ble forsøkt lagret men var mislykket");
+                _log.LogInformation(e.Message);
                 return false;
             }
         }
@@ -54,9 +56,9 @@ namespace Gruppeoppgave2.DAL
                 _log.LogInformation("Alle strekninger ble hentet");
                 return alleStrekninger;
             }
-            catch
+            catch (Exception e)
             {
-                _log.LogInformation("Alle strekninger ble forsøkt hentet men var mislykket");
+                _log.LogInformation(e.Message);
                 return null;
             }
         }
@@ -68,27 +70,34 @@ namespace Gruppeoppgave2.DAL
                 Strekning enDBStrekning = await _db.Strekning.FindAsync(id);
                 _db.Strekning.Remove(enDBStrekning);
                 await _db.SaveChangesAsync();
-                _log.LogInformation("Strekningen "+enDBStrekning.Navn+" ble slettet");
+                _log.LogInformation("Strekningen " + enDBStrekning.Navn + " ble slettet");
                 return true;
             }
-            catch
+            catch (Exception e)
             {
-                _log.LogInformation("En strekning ble forsøkt slettet men var mislykket");
+                _log.LogInformation(e.Message);
                 return false;
             }
         }
 
         public async Task<Strekning> HentEn(int id)
         {
-            Strekning enStrekning = await _db.Strekning.FindAsync(id);
-            var hentetStrekning = new Strekning()
+            try
             {
-                Id = enStrekning.Id,
-                Navn = enStrekning.Navn,
-                Pris = enStrekning.Pris,
-            };
-            _log.LogInformation("Strekningen "+enStrekning.Navn+" ble hentet");
-            return hentetStrekning;
+                Strekning enStrekning = await _db.Strekning.FindAsync(id);
+                var hentetStrekning = new Strekning()
+                {
+                    Id = enStrekning.Id,
+                    Navn = enStrekning.Navn,
+                    Pris = enStrekning.Pris,
+                };
+                return hentetStrekning;
+            }
+            catch (Exception e)
+            {
+                _log.LogInformation(e.Message);
+                return null;
+            }
         }
 
         public async Task<bool> Endre(Strekning endreStrekning)
@@ -99,14 +108,52 @@ namespace Gruppeoppgave2.DAL
                 endreObjekt.Navn = endreStrekning.Navn;
                 endreObjekt.Pris = endreStrekning.Pris;
                 await _db.SaveChangesAsync();
-                _log.LogInformation("Strekningen "+endreStrekning.Navn+" ble endret\nGammel pris: "+endreStrekning.Pris+"\nNytt navn: "+endreObjekt.Navn+", ny pris: "+endreObjekt.Pris);
             }
-            catch
+            catch (Exception e)
             {
-                _log.LogInformation("Strekningen "+endreStrekning.Navn+" ble forsøkt endret var mislykket");
+                _log.LogInformation(e.Message);
                 return false;
             }
             return true;
+        }
+        //Nedenfor er kopiert fra moduler på Canvas
+        public static byte[] LagHash(string passord, byte[] salt)
+        {
+            return KeyDerivation.Pbkdf2(
+                                password: passord,
+                                salt: salt,
+                                prf: KeyDerivationPrf.HMACSHA512,
+                                iterationCount: 1000,
+                                numBytesRequested: 32);
+        }
+
+        public static byte[] LagSalt()
+        {
+            var csp = new RNGCryptoServiceProvider();
+            var salt = new byte[24];
+            csp.GetBytes(salt);
+            return salt;
+        }
+
+        public async Task<bool> LoggInn(Admin admin)
+        {
+            try
+            {
+                Adminer funnetAdmin = await _db.Adminer.FirstOrDefaultAsync(a => a.Brukernavn == admin.Brukernavn);
+                // sjekk passordet
+                byte[] hash = LagHash(admin.Passord, funnetAdmin.Salt);
+                bool ok = hash.SequenceEqual(funnetAdmin.Passord);
+                if (ok)
+                {
+                    return true;
+                }
+                return false;
+            }
+            catch (Exception e)
+            {
+                _log.LogInformation(e.Message);
+                return false;
+            }
         }
     }
 }
