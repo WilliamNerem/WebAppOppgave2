@@ -30,7 +30,7 @@ nav {
     padding-left: 3px;
 }
 
-.ediButton {
+.editButton {
     font-size: 24px;
     width: 32px;
     display: flex;
@@ -41,7 +41,7 @@ nav {
     padding-left: 3px;
 }
 
-.editIcon:hover{
+.editButton:hover{
     color: white;
 }
 

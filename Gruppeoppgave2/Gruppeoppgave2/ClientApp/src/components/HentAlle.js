@@ -12,7 +12,7 @@ export function HentAlle() {
         $.getJSON("strekning/hentAlle", function (strekninger) {
             formaterStrekninger(strekninger);
         });
-    }, [])
+    }, []);
     
 
     function formaterStrekninger(strekninger) {

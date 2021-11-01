@@ -1,9 +1,9 @@
-﻿import React, { useState, ReactDOM } from 'react';
+﻿import React, { useState } from 'react';
 import { InputField } from '../components/InputField';
 import { Button } from '../components/Button';
 import $ from 'jquery';
 
-export function FormStrekning() {
+export function FormStrekning(props) {
     const [strekning, setStrekning] = useState();
     const [pris, setPris] = useState();
     const [errorStrekning, setErrorStrekning] = useState("");
@@ -45,11 +45,13 @@ export function FormStrekning() {
             add();
         }
     }
+    console.log(props.textStrekning);
+    console.log(props.textPris);
 
     return (
         <form action="/departures" onSubmit={validateForm}>
-            <InputField errorMsg={errorStrekning} state={setStrekning} name="Strekning" InputField="Strekning: " />
-            <InputField errorMsg={errorPris} state={setPris} name="Pris" InputField="Pris: " />
+            <InputField testing={props.textStrekning} errorMsg={errorStrekning} state={setStrekning} name="Strekning" InputField="Strekning: " />
+            <InputField testing={props.textPris} errorMsg={errorPris} state={setPris} name="Pris" InputField="Pris: " />
             <Button text="Legg til" />
         </form>
     );
