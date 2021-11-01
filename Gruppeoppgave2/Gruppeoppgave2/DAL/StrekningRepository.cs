@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using Microsoft.Extensions.Logging;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -10,10 +11,12 @@ namespace Gruppeoppgave2.DAL
     public class StrekningRepository : IStrekningRepository
     {
         private readonly DB _db;
+        private ILogger<StrekningRepository> _log;
 
-        public StrekningRepository(DB db)
+        public StrekningRepository(DB db, ILogger<StrekningRepository> log)
         {
             _db = db;
+            _log = log;
         }
 
         public async Task<bool> Lagre(Strekning innStrekning)
@@ -27,10 +30,12 @@ namespace Gruppeoppgave2.DAL
 
                 _db.Add(nyStrekningRad);
                 await _db.SaveChangesAsync();
+                _log.LogInformation("Strekningen " + nyStrekningRad.Navn + " ble lagret");
                 return true;
             }
             catch
             {
+                _log.LogInformation("Strekning ble forsøkt lagret men var mislykket");
                 return false;
             }
         }
@@ -46,10 +51,12 @@ namespace Gruppeoppgave2.DAL
                     Navn = s.Navn,
                     Pris = s.Pris,
                 }).ToListAsync();
+                _log.LogInformation("Alle strekninger ble hentet");
                 return alleStrekninger;
             }
             catch
             {
+                _log.LogInformation("Alle strekninger ble forsøkt hentet men var mislykket");
                 return null;
             }
         }
@@ -61,10 +68,12 @@ namespace Gruppeoppgave2.DAL
                 Strekning enDBStrekning = await _db.Strekning.FindAsync(id);
                 _db.Strekning.Remove(enDBStrekning);
                 await _db.SaveChangesAsync();
+                _log.LogInformation("Strekningen "+enDBStrekning.Navn+" ble slettet");
                 return true;
             }
             catch
             {
+                _log.LogInformation("En strekning ble forsøkt slettet men var mislykket");
                 return false;
             }
         }
@@ -78,6 +87,7 @@ namespace Gruppeoppgave2.DAL
                 Navn = enStrekning.Navn,
                 Pris = enStrekning.Pris,
             };
+            _log.LogInformation("Strekningen "+enStrekning.Navn+" ble hentet");
             return hentetStrekning;
         }
 
@@ -89,9 +99,11 @@ namespace Gruppeoppgave2.DAL
                 endreObjekt.Navn = endreStrekning.Navn;
                 endreObjekt.Pris = endreStrekning.Pris;
                 await _db.SaveChangesAsync();
+                _log.LogInformation("Strekningen "+endreStrekning.Navn+" ble endret\nGammel pris: "+endreStrekning.Pris+"\nNytt navn: "+endreObjekt.Navn+", ny pris: "+endreObjekt.Pris);
             }
             catch
             {
+                _log.LogInformation("Strekningen "+endreStrekning.Navn+" ble forsøkt endret var mislykket");
                 return false;
             }
             return true;
