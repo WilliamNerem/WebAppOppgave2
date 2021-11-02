@@ -3,7 +3,7 @@
 const Modal = (props) => {
 
     return (
-        <div className="modal" id="exampleModal" tabIndex="-1">
+        <div className="modal" id={props.id} tabIndex="-1">
             <div className="modal-dialog modal-dialog-centered">
                 <div className="modal-content">
                     <div className="modal-header">
