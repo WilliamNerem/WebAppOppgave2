@@ -1,6 +1,7 @@
 ﻿import React, { useState, useEffect } from 'react';
 import $ from 'jquery';
 import Modal from './Modal';
+import img from '../img/Color_Line_color_horizontal.png'
 
 export function NavBar() {
     const [loggedIn, setLoggedIn] = useState("Ikke logget inn");
@@ -34,7 +35,7 @@ export function NavBar() {
     return (
         <nav className="navbar navbar-expand-lg navbar-light">
             <div className="container-fluid">
-                <a className="navbar-brand text-light" href="/"><img src="#" alt="" width="100" height="50" /></a>
+                <a className="navbar-brand text-light" href="/"><img src={img} alt="" width="100" height="50" /></a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
