@@ -1,6 +1,14 @@
-﻿import React, { Component } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 
 export function NavBar() {
+    const [loggedIn, setLoggedIn] = useState("Ikke logget inn");
+
+    useEffect(() => {
+        const user = sessionStorage.getItem('loggedIn')
+        if (user !== null) {
+            setLoggedIn("Logget inn som: " + user);
+        }
+    },[]);
 
     return (
         <nav className="navbar navbar-expand-lg navbar-light">
@@ -17,6 +25,9 @@ export function NavBar() {
                         <li className="nav-item">
                             <a className="nav-link active text-light" aria-current="page" href="/departures">Strekninger</a>
                         </li>
+                    </ul>
+                    <ul className="navbar-nav p-2">
+                        <p className="text-light">{loggedIn}</p>
                     </ul>
                 </div>
             </div>

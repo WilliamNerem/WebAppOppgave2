@@ -18,6 +18,7 @@ export function Login() {
         
         $.post("Strekning/Logginn", admin, function (OK) {
             if (OK) {
+                sessionStorage.setItem('loggedIn', username);
                 window.location.href = '/departures'
                 setError("");
             }
