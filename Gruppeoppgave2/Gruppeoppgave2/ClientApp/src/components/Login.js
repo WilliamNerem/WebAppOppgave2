@@ -1,5 +1,6 @@
 ﻿import React, { useState } from 'react';
 import { InputField } from '../components/InputField';
+import { InputFieldPassword } from '../components/InputFieldPassword';
 import { Button } from '../components/Button';
 import $ from 'jquery';
 
@@ -38,7 +39,7 @@ export function Login() {
     return (
         <form onSubmit={checklogin}>
             <InputField state={setUsername} name="Brukernavn" InputField="Brukernavn: " />
-            <InputField errorMsg={error} state={setPassword} name="Passord" InputField="Passord: " />
+            <InputFieldPassword errorMsg={error} state={setPassword} name="Passord" InputField="Passord: " />
             <Button text="Logg Inn" />
         </form>
     );

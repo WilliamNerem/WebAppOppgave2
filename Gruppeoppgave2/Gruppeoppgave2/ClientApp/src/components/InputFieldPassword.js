@@ -1,6 +1,6 @@
 ﻿import React from 'react';
 
-export function InputField(props) {
+export function InputFieldPassword(props) {
 
     function handleChange(value) {
         const str = value.target.value;
@@ -9,8 +9,8 @@ export function InputField(props) {
 
     return (
         <div>
-            <label>{ props.InputField }
-                <input className="form-control" value={props.testing} onBlur={handleChange} type="text" ></input>
+            <label>{props.InputField}
+                <input className="form-control" value={props.testing} onBlur={handleChange} type="password" ></input>
             </label>
             <p className="errorMsg">{props.errorMsg}</p>
         </div>
