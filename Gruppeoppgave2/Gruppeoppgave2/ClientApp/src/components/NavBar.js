@@ -1,9 +1,15 @@
 ﻿import React, { useState, useEffect } from 'react';
 import $ from 'jquery';
+import Modal from './Modal';
 
 export function NavBar() {
     const [loggedIn, setLoggedIn] = useState("Ikke logget inn");
-    const [logOutButton, setLogOutButton] = useState("Ikke logget inn");
+    const [logOutButton, setLogOutButton] = useState();
+
+    const modalTitle = "Logge ut?";
+    const modalBodyText = "Du er i ferd med å logge ut av denne brukeren. Er du sikker på at du vil fortsette? Alle ulagrede endringer vil bli borte.";
+    const modalDismissText = "Avbryt";
+    const modalContinueText = "Logg ut";
 
     useEffect(() => {
         const user = sessionStorage.getItem('loggedIn');
@@ -11,13 +17,13 @@ export function NavBar() {
             setLoggedIn("Logget inn som: " + user);
             setLogOutButton(
                 <li className="nav-item">
-                    <button onClick={logOut} aria-current="page">Logg ut</button>
+                    <button aria-current="page" data-bs-toggle="modal" data-bs-target="#exampleModal">Logg ut</button>
                 </li>
                 );
         }
     }, []);
 
-    function logOut() {
+    const logOut = () => {
         $.post("Strekning/LoggUt", function (OK) {
             sessionStorage.setItem('loggedIn', null);
             window.location.href = '/'
@@ -46,6 +52,7 @@ export function NavBar() {
                     </ul>
                 </div>
             </div>
+            <Modal continue={logOut} title={modalTitle} body={modalBodyText} dismissBtn={modalDismissText} continueBtn={modalContinueText} />
         </nav>
     );
 }

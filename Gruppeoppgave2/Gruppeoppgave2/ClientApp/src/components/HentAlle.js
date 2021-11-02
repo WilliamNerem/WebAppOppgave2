@@ -38,7 +38,7 @@ export function HentAlle() {
         setUt(arr);
     }
     return (
-        <div id="strekningene">
+        <div>
             <table className="table">
                 <thead>
                     <tr className="table-primary">
