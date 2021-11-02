@@ -1,14 +1,22 @@
 ﻿import React, { useState, useEffect } from 'react';
+import $ from 'jquery';
 
 export function NavBar() {
     const [loggedIn, setLoggedIn] = useState("Ikke logget inn");
 
     useEffect(() => {
-        const user = sessionStorage.getItem('loggedIn')
-        if (user !== null) {
+        const user = sessionStorage.getItem('loggedIn');
+        if ((user !== null) && (user !== "null")) {
             setLoggedIn("Logget inn som: " + user);
         }
-    },[]);
+    }, []);
+
+    function logOut() {
+        $.post("Strekning/LoggUt", function (OK) {
+            sessionStorage.setItem('loggedIn', null);
+            window.location.href = '/'
+        });
+    }
 
     return (
         <nav className="navbar navbar-expand-lg navbar-light">
@@ -28,6 +36,9 @@ export function NavBar() {
                     </ul>
                     <ul className="navbar-nav p-2">
                         <p className="text-light">{loggedIn}</p>
+                        <li className="nav-item">
+                            <button onClick={logOut} aria-current="page">Logg ut</button>
+                        </li>
                     </ul>
                 </div>
             </div>

@@ -155,5 +155,10 @@ namespace Gruppeoppgave2.DAL
                 return false;
             }
         }
+
+        public Boolean LoggUt()
+        {
+            return true;
+        }
     }
 }
