@@ -3,7 +3,7 @@ import $ from 'jquery';
 
 export function NavBar() {
     const [loggedIn, setLoggedIn] = useState("Ikke logget inn");
-    const [logOutButton, setLogOutButton] = useState("Ikke logget inn");
+    const [logOutButton, setLogOutButton] = useState();
 
     useEffect(() => {
         const user = sessionStorage.getItem('loggedIn');
