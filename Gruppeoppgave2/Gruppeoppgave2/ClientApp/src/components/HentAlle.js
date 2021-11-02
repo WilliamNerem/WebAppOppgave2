@@ -10,6 +10,10 @@ export function HentAlle() {
     };
 
     useEffect(() => {
+        renderStrekninger();
+    }, []);
+   
+    const renderStrekninger = () => {
         $.get("strekning/hentAlle", function (strekninger) {
             formaterStrekninger(strekninger);
         })
@@ -21,9 +25,7 @@ export function HentAlle() {
                 }
 
             });
-    }, []);
-   
-    
+    }
 
     function formaterStrekninger(strekninger) {
         let arr = [];
@@ -32,7 +34,7 @@ export function HentAlle() {
                 <th scope="row">{strekning.id}</th>
                 <td>{strekning.navn}</td>
                 <td>{strekning.pris}</td>
-                <td><div style={formatButtons}><DeleteButton id={strekning.id} /><EditButton id={strekning.id} /></div></td>
+                <td><div style={formatButtons}><DeleteButton reRender={renderStrekninger} id={strekning.id} /><EditButton id={strekning.id} /></div></td>
             </tr>);
         }
         setUt(arr);

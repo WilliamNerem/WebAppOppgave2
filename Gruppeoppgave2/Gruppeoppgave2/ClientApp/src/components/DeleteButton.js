@@ -1,9 +1,8 @@
-﻿import React from 'react';
+﻿import React, { useState } from 'react';
 import Modal from './Modal';
 import $ from 'jquery';
 
 export function DeleteButton(props) {
-
     const modalId = "deleteModal" + props.id;
     const modalTargetId = "#deleteModal" + props.id;
     const modalTitle = "Er du sikker?";
@@ -13,6 +12,7 @@ export function DeleteButton(props) {
 
     const deleteStrekning = () => {
         $.get("strekning/slett?id=" + props.id, function (OK) {
+            props.reRender();
             if (!OK) {
                 $("#feil").html("Feil i db - vennligst forsøk igjen");
             }
@@ -22,6 +22,7 @@ export function DeleteButton(props) {
                     window.location.href = "/"
                 }
             });
+        
     }
 
     return (
