@@ -3,27 +3,31 @@ import { FormEditStrekning } from '../components/FormEditStrekning';
 import $ from 'jquery';
 
 export function EditStrekning() {
-    const [strekningen, setStrekningen] = useState();
-    const [pris, setPris] = useState();
+    let strekningen;
+    let pris;
+    const [ut, setUt] = useState();
 
     const user = sessionStorage.getItem('loggedIn');
     if (user === null) {
         window.location.href = '/';
     }
 
-    useState(() => {
+    useState(async() => {
         const test = window.location.search.substring(1);
-        $.get("strekning/hentEn?id=" + test, function (strekning) {
-            setStrekningen(strekning.navn);
-            setPris(strekning.pris);
+        await $.get("strekning/hentEn?id=" + test, function (strekning) {
+            strekningen = strekning.navn;
+            pris = strekning.pris;
+            render();
         });
     }, []);
 
-    
+    function render() {
+        setUt(<FormEditStrekning textStrekning={strekningen} textPris={pris} />);
+    }
 
     return (
         <div>
-            <FormEditStrekning textStrekning={strekningen} textPris={pris} />
+            {ut}
         </div>
     );
 
