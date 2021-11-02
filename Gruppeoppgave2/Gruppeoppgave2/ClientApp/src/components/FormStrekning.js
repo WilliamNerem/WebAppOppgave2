@@ -8,7 +8,7 @@ export function FormStrekning(props) {
     const [pris, setPris] = useState();
     const [errorStrekning, setErrorStrekning] = useState("");
     const [errorPris, setErrorPris] = useState("");
-    const validStrekning = new RegExp('^[A-Z][a-z]+ - [A-Z][a-z]+$');
+    const validStrekning = new RegExp('^[A-ZÆØÅ][a-zæøå]+ - [A-ZÆØÅ][a-zæøå]+$');
     const validPris = new RegExp('^[0-9]+$');
 
     function add() {
