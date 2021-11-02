@@ -3,11 +3,17 @@ import $ from 'jquery';
 
 export function NavBar() {
     const [loggedIn, setLoggedIn] = useState("Ikke logget inn");
+    const [logOutButton, setLogOutButton] = useState("Ikke logget inn");
 
     useEffect(() => {
         const user = sessionStorage.getItem('loggedIn');
         if ((user !== null) && (user !== "null")) {
             setLoggedIn("Logget inn som: " + user);
+            setLogOutButton(
+                <li className="nav-item">
+                    <button onClick={logOut} aria-current="page">Logg ut</button>
+                </li>
+                );
         }
     }, []);
 
@@ -36,9 +42,7 @@ export function NavBar() {
                     </ul>
                     <ul className="navbar-nav p-2">
                         <p className="text-light">{loggedIn}</p>
-                        <li className="nav-item">
-                            <button onClick={logOut} aria-current="page">Logg ut</button>
-                        </li>
+                        {logOutButton}
                     </ul>
                 </div>
             </div>
