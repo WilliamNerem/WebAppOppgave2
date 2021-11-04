@@ -35,7 +35,7 @@ export function HentAlle() {
                 <td>{strekning.navn}</td>
                 <td>{strekning.tid}</td>
                 <td>{strekning.pris}</td>
-                <td><div style={formatButtons}><DeleteButton reRender={renderStrekninger} id={strekning.id} /><EditButton id={strekning.id} /></div></td>
+                <td><div style={formatButtons}><EditButton id={strekning.id} /><DeleteButton reRender={renderStrekninger} id={strekning.id} /></div></td>
             </tr>);
         }
         setUt(arr);

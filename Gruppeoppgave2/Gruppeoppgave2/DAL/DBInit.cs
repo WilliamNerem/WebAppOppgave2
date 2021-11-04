@@ -2,11 +2,7 @@
 using Gruppeoppgave2.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
-using System.Linq;
-using System.Web;
 
 namespace GruppeOppgave2.Models
 {
@@ -79,6 +75,20 @@ namespace GruppeOppgave2.Models
                     Pris = 500
                 };
 
+                var nyStrekning9 = new Strekning
+                {
+                    Navn = "Larvik - Hirtshals",
+                    Tid = "15:30",
+                    Pris = 600
+                };
+
+                var nyStrekning10 = new Strekning
+                {
+                    Navn = "Sandefjord - Strømstad",
+                    Tid = "16:00",
+                    Pris = 400
+                };
+
 
                 context.Strekning.Add(nyStrekning3);
                 context.Strekning.Add(nyStrekning7);
@@ -88,6 +98,9 @@ namespace GruppeOppgave2.Models
                 context.Strekning.Add(nyStrekning6);
                 context.Strekning.Add(nyStrekning4);
                 context.Strekning.Add(nyStrekning8);
+                context.Strekning.Add(nyStrekning9);
+                context.Strekning.Add(nyStrekning10);
+                
 
                 var admin = new Adminer();
                 admin.Brukernavn = "Admin";
