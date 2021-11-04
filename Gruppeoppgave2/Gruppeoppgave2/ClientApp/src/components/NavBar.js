@@ -47,12 +47,12 @@ export function NavBar() {
                         <li className="nav-item">
                             <a className="nav-link active text-light" aria-current="page" href="/departures">Strekninger</a>
                         </li>
+                        <li className="nav-item">
+                            <a className="nav-link active text-light">{loggedIn}</a>
+                        </li>
+                        {logOutButton}
                     </ul>
                 </div>
-                <div className="nav-item">
-                    <a className="nav-link active text-light">{loggedIn}</a>
-                </div>
-                {logOutButton}
             </div>
             <Modal id={modalId} continue={logOut} title={modalTitle} body={modalBodyText} dismissBtn={modalDismissText} continueBtn={modalContinueText} />
         </nav>
