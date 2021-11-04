@@ -1,0 +1,7 @@
+2021-11-04T19:35:39.7093424+01:00  [INF] Now listening on: "https://localhost:5001" (d826f4b8)
+2021-11-04T19:35:39.7118741+01:00  [INF] Now listening on: "http://localhost:5000" (d826f4b8)
+2021-11-04T19:35:39.7120064+01:00  [INF] Application started. Press Ctrl+C to shut down. (dcaefe54)
+2021-11-04T19:35:39.7120326+01:00  [INF] Hosting environment: "Development" (c3307c92)
+2021-11-04T19:35:39.7120456+01:00  [INF] Content root path: "C:\Users\maren\OneDrive\Dokumenter\IT\Webapplikasjoner\WebAppOppgave2\Gruppeoppgave2\Gruppeoppgave2" (b5d60022)
+2021-11-04T19:35:56.0185629+01:00 0HMCVO7JAPF32:0000002B [INF] Strekning ble endret (264ae163)
+2021-11-04T19:36:13.5938556+01:00 0HMCVO7JAPF32:00000049 [INF] Strekning ble endret (264ae163)
