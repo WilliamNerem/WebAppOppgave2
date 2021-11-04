@@ -14,9 +14,12 @@ namespace Gruppeoppgave2.DAL
     {
         private readonly DB _db;
 
-        public StrekningRepository(DB db)
+        private ILogger<StrekningRepository> _log;
+
+        public StrekningRepository(DB db, ILogger<StrekningRepository> log)
         {
             _db = db;
+            _log = log;
         }
 
         public async Task<bool> Lagre(Strekning innStrekning)
@@ -33,8 +36,9 @@ namespace Gruppeoppgave2.DAL
                 await _db.SaveChangesAsync();
                 return true;
             }
-            catch
+            catch (Exception e)
             {
+                _log.LogInformation(e.Message);
                 return false;
             }
         }
@@ -53,8 +57,9 @@ namespace Gruppeoppgave2.DAL
                 }).ToListAsync();
                 return alleStrekninger;
             }
-            catch
+            catch (Exception e)
             {
+                _log.LogInformation(e.Message);
                 return null;
             }
         }
@@ -68,8 +73,9 @@ namespace Gruppeoppgave2.DAL
                 await _db.SaveChangesAsync();
                 return true;
             }
-            catch
+            catch(Exception e)
             {
+                _log.LogInformation(e.Message);
                 return false;
             }
         }
@@ -88,8 +94,9 @@ namespace Gruppeoppgave2.DAL
                 };
                 return hentetStrekning;
             }
-            catch
+            catch (Exception e)
             {
+                _log.LogInformation(e.Message);
                 return null;
             }
         }
@@ -143,15 +150,16 @@ namespace Gruppeoppgave2.DAL
                 }
                 return false;
             }
-            catch
+            catch (Exception e)
             {
+                _log.LogInformation(e.Message);
                 return false;
             }
         }
 
-        public Boolean LoggUt()
+        public Task<bool> LoggUt()
         {
-            return true;
+            return Task.FromResult(true);
         }
     }
 }
