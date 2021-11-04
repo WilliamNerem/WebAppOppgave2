@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Container } from 'reactstrap';
 import { NavBar } from '../components/NavBar';
 import img from '../img/color-line-bg.png';
