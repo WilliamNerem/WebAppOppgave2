@@ -1,10 +1,10 @@
 ﻿import React, { useEffect, useState } from 'react';
 
 export function InputField(props) {
-    const [newValue, setNewValue] = useState(props.testing);
+    const [newValue, setNewValue] = useState(props.text);
 
     useEffect(() => {
-        props.state(props.testing);
+        props.state(props.text);
     }, []);
 
     function handleChange(value) {

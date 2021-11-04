@@ -1,9 +1,7 @@
 using Gruppeoppgave2.DAL;
 using Gruppeoppgave2.Models;
-using GruppeOppgave2.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -53,7 +51,7 @@ namespace Gruppeoppgave2
             {
                 app.UseDeveloperExceptionPage();
                 loggerFactory.AddFile("Logs/StrekningLog.txt");
-                //DBInit.init(app); Kommentert ut for innlevering
+                //DBInit.init(app); //Kommentert ut for innlevering
             }
             else
             {
