@@ -13,12 +13,10 @@ namespace Gruppeoppgave2.DAL
     public class StrekningRepository : IStrekningRepository
     {
         private readonly DB _db;
-        private ILogger<StrekningRepository> _log;
 
-        public StrekningRepository(DB db, ILogger<StrekningRepository> log)
+        public StrekningRepository(DB db)
         {
             _db = db;
-            _log = log;
         }
 
         public async Task<bool> Lagre(Strekning innStrekning)
@@ -27,17 +25,16 @@ namespace Gruppeoppgave2.DAL
             {
                 var nyStrekningRad = new Strekning();
                 nyStrekningRad.Navn = innStrekning.Navn;
+                nyStrekningRad.Tid = innStrekning.Tid;
                 nyStrekningRad.Pris = innStrekning.Pris;
 
 
                 _db.Add(nyStrekningRad);
                 await _db.SaveChangesAsync();
-                _log.LogInformation("Strekningen " + nyStrekningRad.Navn + " ble lagret");
                 return true;
             }
-            catch (Exception e)
+            catch
             {
-                _log.LogInformation(e.Message);
                 return false;
             }
         }
@@ -51,14 +48,13 @@ namespace Gruppeoppgave2.DAL
                 {
                     Id = s.Id,
                     Navn = s.Navn,
+                    Tid = s.Tid,
                     Pris = s.Pris,
                 }).ToListAsync();
-                _log.LogInformation("Alle strekninger ble hentet");
                 return alleStrekninger;
             }
-            catch (Exception e)
+            catch
             {
-                _log.LogInformation(e.Message);
                 return null;
             }
         }
@@ -70,12 +66,10 @@ namespace Gruppeoppgave2.DAL
                 Strekning enDBStrekning = await _db.Strekning.FindAsync(id);
                 _db.Strekning.Remove(enDBStrekning);
                 await _db.SaveChangesAsync();
-                _log.LogInformation("Strekningen " + enDBStrekning.Navn + " ble slettet");
                 return true;
             }
-            catch (Exception e)
+            catch
             {
-                _log.LogInformation(e.Message);
                 return false;
             }
         }
@@ -89,13 +83,13 @@ namespace Gruppeoppgave2.DAL
                 {
                     Id = enStrekning.Id,
                     Navn = enStrekning.Navn,
+                    Tid = enStrekning.Tid,
                     Pris = enStrekning.Pris,
                 };
                 return hentetStrekning;
             }
-            catch (Exception e)
+            catch
             {
-                _log.LogInformation(e.Message);
                 return null;
             }
         }
@@ -106,12 +100,12 @@ namespace Gruppeoppgave2.DAL
             {
                 var endreObjekt = await _db.Strekning.FindAsync(endreStrekning.Id);
                 endreObjekt.Navn = endreStrekning.Navn;
+                endreObjekt.Tid = endreStrekning.Tid;
                 endreObjekt.Pris = endreStrekning.Pris;
                 await _db.SaveChangesAsync();
             }
-            catch (Exception e)
+            catch
             {
-                _log.LogInformation(e.Message);
                 return false;
             }
             return true;
@@ -149,9 +143,8 @@ namespace Gruppeoppgave2.DAL
                 }
                 return false;
             }
-            catch (Exception e)
+            catch
             {
-                _log.LogInformation(e.Message);
                 return false;
             }
         }
