@@ -12,7 +12,7 @@ namespace Gruppeoppgave2.Models
         public string Navn { get; set; }
         [RegularExpression(@"[0-9]{2}:[0-9]{2}")]
         public string Tid { get; set; }
-        [RegularExpression(@"[0-9]{4}")]
+        [RegularExpression(@"[0-9]{1,4}")]
         public int Pris { get; set; }
     }
 }

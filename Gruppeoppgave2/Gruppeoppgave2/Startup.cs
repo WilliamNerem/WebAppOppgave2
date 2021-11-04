@@ -1,5 +1,6 @@
 using Gruppeoppgave2.DAL;
 using Gruppeoppgave2.Models;
+using GruppeOppgave2.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
