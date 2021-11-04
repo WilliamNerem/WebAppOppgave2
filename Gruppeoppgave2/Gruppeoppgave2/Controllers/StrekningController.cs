@@ -40,7 +40,8 @@ namespace Gruppeoppgave2.Controllers
                     _log.LogInformation("Strekning kunne ikke lagres!");
                     return BadRequest("Strekning kunne ikke lagres");
                 }
-                return Ok("Strekning lagret");
+                _log.LogInformation("Strekningen " + innStrekning.Navn + " ble lagret!");
+                return Ok("Strekningen " + innStrekning.Navn + " ble lagret!");
             }
             _log.LogInformation("Feil i inputvalidering");
             return BadRequest("Feil i inputvalidering på server");
@@ -68,7 +69,8 @@ namespace Gruppeoppgave2.Controllers
                 _log.LogInformation("Sletting av strekningen ble ikke utført");
                 return NotFound("Sletting av strekningen ble ikke utført");
             }
-            return Ok("Strekning slettet");
+            _log.LogInformation("Strekningen med id " + id + " ble slettet!");
+            return Ok("Strekningen med id " + id + " ble slettet!");
         }
 
         public async Task<ActionResult> HentEn(int id)
@@ -100,7 +102,8 @@ namespace Gruppeoppgave2.Controllers
                     _log.LogInformation("Endringen kunne ikke utføres");
                     return NotFound("Endringen av strekningen kunne ikke utføres");
                 }
-                return Ok("Strekningen er endret");
+                _log.LogInformation("Strekningen med id " + endreStrekning.Id + " ble endret!");
+                return Ok("Strekningen med id " + endreStrekning.Id + " ble endret!");
             }
             _log.LogInformation("Feil i inputvalidering");
             return BadRequest("Feil i inputvalidering på server");

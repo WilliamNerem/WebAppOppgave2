@@ -13,12 +13,10 @@ namespace Gruppeoppgave2.DAL
     public class StrekningRepository : IStrekningRepository
     {
         private readonly DB _db;
-        private ILogger<StrekningRepository> _log;
 
-        public StrekningRepository(DB db, ILogger<StrekningRepository> log)
+        public StrekningRepository(DB db)
         {
             _db = db;
-            _log = log;
         }
 
         public async Task<bool> Lagre(Strekning innStrekning)
@@ -33,12 +31,10 @@ namespace Gruppeoppgave2.DAL
 
                 _db.Add(nyStrekningRad);
                 await _db.SaveChangesAsync();
-                _log.LogInformation("Strekningen " + nyStrekningRad.Navn + " ble lagret");
                 return true;
             }
-            catch (Exception e)
+            catch
             {
-                _log.LogInformation(e.Message);
                 return false;
             }
         }
@@ -55,12 +51,10 @@ namespace Gruppeoppgave2.DAL
                     Tid = s.Tid,
                     Pris = s.Pris,
                 }).ToListAsync();
-                _log.LogInformation("Alle strekninger ble hentet");
                 return alleStrekninger;
             }
-            catch (Exception e)
+            catch
             {
-                _log.LogInformation(e.Message);
                 return null;
             }
         }
@@ -72,12 +66,10 @@ namespace Gruppeoppgave2.DAL
                 Strekning enDBStrekning = await _db.Strekning.FindAsync(id);
                 _db.Strekning.Remove(enDBStrekning);
                 await _db.SaveChangesAsync();
-                _log.LogInformation("Strekningen " + enDBStrekning.Navn + " ble slettet");
                 return true;
             }
-            catch (Exception e)
+            catch
             {
-                _log.LogInformation(e.Message);
                 return false;
             }
         }
@@ -96,9 +88,8 @@ namespace Gruppeoppgave2.DAL
                 };
                 return hentetStrekning;
             }
-            catch (Exception e)
+            catch
             {
-                _log.LogInformation(e.Message);
                 return null;
             }
         }
@@ -113,9 +104,8 @@ namespace Gruppeoppgave2.DAL
                 endreObjekt.Pris = endreStrekning.Pris;
                 await _db.SaveChangesAsync();
             }
-            catch (Exception e)
+            catch
             {
-                _log.LogInformation(e.Message);
                 return false;
             }
             return true;
@@ -153,9 +143,8 @@ namespace Gruppeoppgave2.DAL
                 }
                 return false;
             }
-            catch (Exception e)
+            catch
             {
-                _log.LogInformation(e.Message);
                 return false;
             }
         }
