@@ -36,12 +36,14 @@ namespace XUnitTestGruppeoppgave2
             {
                 Id = 1,
                 Navn = "Oslo - Kiel",
+                Tid = "11:15",
                 Pris = 750
             };
             var strekning2 = new Strekning
             {
                 Id = 2,
                 Navn = "Larvik - Hirthals",
+                Tid = "10:00",
                 Pris = 600
             };
 
@@ -49,6 +51,7 @@ namespace XUnitTestGruppeoppgave2
             {
                 Id = 3,
                 Navn = "Sandefjord - Strømstad",
+                Tid = "09:30",
                 Pris = 400
             };
 
@@ -156,6 +159,7 @@ namespace XUnitTestGruppeoppgave2
             {
                 Id = 1,
                 Navn = "",
+                Tid = "10:00",
                 Pris = 600,
             };
 
@@ -263,6 +267,7 @@ namespace XUnitTestGruppeoppgave2
             {
                 Id = 1,
                 Navn = "Larvik - Hirtshals",
+                Tid = "10:00",
                 Pris = 600,
             };
 
@@ -371,6 +376,7 @@ namespace XUnitTestGruppeoppgave2
             {
                 Id = 1,
                 Navn = "",
+                Tid = "10:00",
                 Pris = 600,
             };
 
