@@ -33,6 +33,7 @@ export function HentAlle() {
             arr.push(<tr>
                 <th scope="row">{strekning.id}</th>
                 <td>{strekning.navn}</td>
+                <td>{strekning.tid}</td>
                 <td>{strekning.pris}</td>
                 <td><div style={formatButtons}><DeleteButton reRender={renderStrekninger} id={strekning.id} /><EditButton id={strekning.id} /></div></td>
             </tr>);
@@ -46,6 +47,7 @@ export function HentAlle() {
                     <tr className="table-primary">
                         <th scope="col">#</th>
                         <th scope="col">Strekning:</th>
+                        <th scope="col">Tid:</th>
                         <th scope="col">Pris:</th>
                         <th scope="col">Knapper:</th>
                     </tr>

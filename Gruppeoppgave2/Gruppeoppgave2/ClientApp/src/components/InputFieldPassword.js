@@ -10,7 +10,7 @@ export function InputFieldPassword(props) {
     return (
         <div>
             <label>{props.InputField}
-                <input className="form-control" value={props.testing} onBlur={handleChange} type="password" ></input>
+                <input className="form-control" value={props.testing} onChange={handleChange} type="password" ></input>
             </label>
             <p className="errorMsg">{props.errorMsg}</p>
         </div>
