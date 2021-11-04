@@ -143,7 +143,6 @@ namespace Gruppeoppgave2.DAL
             try
             {
                 Adminer funnetAdmin = await _db.Adminer.FirstOrDefaultAsync(a => a.Brukernavn == admin.Brukernavn);
-                // sjekk passordet
                 byte[] hash = LagHash(admin.Passord, funnetAdmin.Salt);
                 bool ok = hash.SequenceEqual(funnetAdmin.Passord);
                 if (ok)
