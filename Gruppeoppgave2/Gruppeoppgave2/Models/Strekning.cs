@@ -8,7 +8,7 @@ namespace Gruppeoppgave2.Models
     public class Strekning
     {
         public int Id { get; set; }
-        [RegularExpression(@"[A-ZÆØÅ][a-zæøå]+ - [A-ZÆØÅ][a-zæøå]")]
+        [RegularExpression(@"[A-ZÆØÅ][a-zæøå]+ - [A-ZÆØÅ][a-zæøå]+")]
         public string Navn { get; set; }
         [RegularExpression(@"[0-9]{2}:[0-9]{2}")]
         public string Tid { get; set; }
