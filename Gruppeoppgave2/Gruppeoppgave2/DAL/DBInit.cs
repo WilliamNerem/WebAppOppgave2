@@ -24,48 +24,56 @@ namespace GruppeOppgave2.Models
                 var nyStrekning1 = new Strekning
                 {
                     Navn = "Larvik - Hirtshals",
+                    Tid = "10:00",
                     Pris = 600
                 };
 
                 var nyStrekning2 = new Strekning
                 {
                     Navn = "Sandefjord - Strømstad",
+                    Tid = "09:30",
                     Pris = 400
                 };
 
                 var nyStrekning3 = new Strekning
                 {
                     Navn = "Oslo - Kiel",
+                    Tid = "11:15",
                     Pris = 750
                 };
 
                 var nyStrekning4 = new Strekning
                 {
                     Navn = "Kristiansand - Hirtshals",
+                    Tid = "17:05",
                     Pris = 500
                 };
 
                 var nyStrekning5 = new Strekning
                 {
                     Navn = "Hirtshals - Larvik",
+                    Tid = "19:00",
                     Pris = 600
                 };
 
                 var nyStrekning6 = new Strekning
                 {
                     Navn = "Strømstad - Sandefjord",
+                    Tid = "21:00",
                     Pris = 400
                 };
 
                 var nyStrekning7 = new Strekning
                 {
                     Navn = "Kiel - Oslo",
+                    Tid = "16:45",
                     Pris = 750
                 };
 
                 var nyStrekning8 = new Strekning
                 {
                     Navn = "Hirtshals - Kristiansand",
+                    Tid = "14:20",
                     Pris = 500
                 };
 

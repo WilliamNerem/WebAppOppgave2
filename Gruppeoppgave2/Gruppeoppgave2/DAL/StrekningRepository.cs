@@ -27,6 +27,7 @@ namespace Gruppeoppgave2.DAL
             {
                 var nyStrekningRad = new Strekning();
                 nyStrekningRad.Navn = innStrekning.Navn;
+                nyStrekningRad.Tid = innStrekning.Tid;
                 nyStrekningRad.Pris = innStrekning.Pris;
 
 
@@ -51,6 +52,7 @@ namespace Gruppeoppgave2.DAL
                 {
                     Id = s.Id,
                     Navn = s.Navn,
+                    Tid = s.Tid,
                     Pris = s.Pris,
                 }).ToListAsync();
                 _log.LogInformation("Alle strekninger ble hentet");
@@ -89,6 +91,7 @@ namespace Gruppeoppgave2.DAL
                 {
                     Id = enStrekning.Id,
                     Navn = enStrekning.Navn,
+                    Tid = enStrekning.Tid,
                     Pris = enStrekning.Pris,
                 };
                 return hentetStrekning;
@@ -106,6 +109,7 @@ namespace Gruppeoppgave2.DAL
             {
                 var endreObjekt = await _db.Strekning.FindAsync(endreStrekning.Id);
                 endreObjekt.Navn = endreStrekning.Navn;
+                endreObjekt.Tid = endreStrekning.Tid;
                 endreObjekt.Pris = endreStrekning.Pris;
                 await _db.SaveChangesAsync();
             }
