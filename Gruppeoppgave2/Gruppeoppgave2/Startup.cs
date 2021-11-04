@@ -53,7 +53,7 @@ namespace Gruppeoppgave2
             {
                 app.UseDeveloperExceptionPage();
                 loggerFactory.AddFile("Logs/StrekningLog.txt");
-                DBInit.init(app);
+                //DBInit.init(app); Kommentert ut for innlevering
             }
             else
             {

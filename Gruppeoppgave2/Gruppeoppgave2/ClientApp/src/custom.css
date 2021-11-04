@@ -49,7 +49,6 @@ nav {
 }
 
 .deleteButton{
-    margin-right: 8px;
     font-size: 24px;
     width: 32px;
     display: flex;
@@ -61,6 +60,7 @@ nav {
 }
 
 .editButton {
+    margin-right: 8px;
     font-size: 24px;
     width: 32px;
     display: flex;
