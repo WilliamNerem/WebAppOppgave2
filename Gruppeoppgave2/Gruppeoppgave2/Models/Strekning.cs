@@ -1,8 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Gruppeoppgave2.Models
 {
+    [ExcludeFromCodeCoverage]
     public class Strekning
     {
         public int Id { get; set; }

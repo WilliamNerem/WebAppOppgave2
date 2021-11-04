@@ -7,9 +7,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Cryptography.KeyDerivation;
 using System.Security.Cryptography;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Gruppeoppgave2.DAL
 {
+    [ExcludeFromCodeCoverage]
     public class StrekningRepository : IStrekningRepository
     {
         private readonly DB _db;

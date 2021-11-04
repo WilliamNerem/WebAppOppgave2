@@ -128,7 +128,7 @@ namespace XUnitTestGruppeoppgave2
 
             // Assert 
             Assert.Equal((int)HttpStatusCode.OK, resultat.StatusCode);
-            Assert.Equal("Strekning lagret", resultat.Value);
+            Assert.Equal("Strekning ble lagret", resultat.Value);
         }
 
         [Fact]
@@ -216,7 +216,7 @@ namespace XUnitTestGruppeoppgave2
 
             // Assert 
             Assert.Equal((int)HttpStatusCode.OK, resultat.StatusCode);
-            Assert.Equal("Strekning slettet", resultat.Value);
+            Assert.Equal("Strekning ble slettet", resultat.Value);
         }
 
         [Fact]
@@ -237,7 +237,7 @@ namespace XUnitTestGruppeoppgave2
 
             // Assert 
             Assert.Equal((int)HttpStatusCode.NotFound, resultat.StatusCode);
-            Assert.Equal("Sletting av strekningen ble ikke utført", resultat.Value);
+            Assert.Equal("Sletting av strekning ble ikke utført", resultat.Value);
         }
 
         [Fact]
@@ -345,7 +345,7 @@ namespace XUnitTestGruppeoppgave2
 
             // Assert 
             Assert.Equal((int)HttpStatusCode.OK, resultat.StatusCode);
-            Assert.Equal("Strekningen er endret", resultat.Value);
+            Assert.Equal("Strekning ble endret", resultat.Value);
         }
 
         [Fact]

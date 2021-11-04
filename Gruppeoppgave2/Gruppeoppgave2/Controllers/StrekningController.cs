@@ -37,11 +37,11 @@ namespace Gruppeoppgave2.Controllers
                 bool returOK = await _db.Lagre(innStrekning);
                 if (!returOK)
                 {
-                    _log.LogInformation("Strekning kunne ikke lagres!");
+                    _log.LogInformation("Strekning kunne ikke lagres");
                     return BadRequest("Strekning kunne ikke lagres");
                 }
-                _log.LogInformation("Strekningen " + innStrekning.Navn + " ble lagret!");
-                return Ok("Strekningen " + innStrekning.Navn + " ble lagret!");
+                _log.LogInformation("Strekning ble lagret");
+                return Ok("Strekning ble lagret");
             }
             _log.LogInformation("Feil i inputvalidering");
             return BadRequest("Feil i inputvalidering på server");
@@ -66,11 +66,11 @@ namespace Gruppeoppgave2.Controllers
             bool returOK = await _db.Slett(id);
             if (!returOK)
             {
-                _log.LogInformation("Sletting av strekningen ble ikke utført");
-                return NotFound("Sletting av strekningen ble ikke utført");
+                _log.LogInformation("Sletting av strekning ble ikke utført");
+                return NotFound("Sletting av strekning ble ikke utført");
             }
-            _log.LogInformation("Strekningen med id " + id + " ble slettet!");
-            return Ok("Strekningen med id " + id + " ble slettet!");
+            _log.LogInformation("Strekning ble slettet");
+            return Ok("Strekning ble slettet");
         }
 
         public async Task<ActionResult> HentEn(int id)
@@ -102,8 +102,8 @@ namespace Gruppeoppgave2.Controllers
                     _log.LogInformation("Endringen kunne ikke utføres");
                     return NotFound("Endringen av strekningen kunne ikke utføres");
                 }
-                _log.LogInformation("Strekningen med id " + endreStrekning.Id + " ble endret!");
-                return Ok("Strekningen med id " + endreStrekning.Id + " ble endret!");
+                _log.LogInformation("Strekning ble endret");
+                return Ok("Strekning ble endret");
             }
             _log.LogInformation("Feil i inputvalidering");
             return BadRequest("Feil i inputvalidering på server");

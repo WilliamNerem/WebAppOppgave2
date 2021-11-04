@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Web;
 
@@ -11,6 +12,7 @@ namespace GruppeOppgave2.Models
 {
     public class DBInit
     {
+        [ExcludeFromCodeCoverage]
         public static void init(IApplicationBuilder app)
         {
             using (var serviceScope = app.ApplicationServices.CreateScope())
