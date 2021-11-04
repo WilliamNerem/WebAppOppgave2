@@ -7,6 +7,6 @@ export function CancelButton(props) {
     }
 
     return (
-        <button onclick={handleClick} className="btn btn-danger cancelBtn">Avbryt</button>
+        <button type="button" onClick={handleClick} className="btn btn-danger cancelBtn">Avbryt</button>
     );
 }
