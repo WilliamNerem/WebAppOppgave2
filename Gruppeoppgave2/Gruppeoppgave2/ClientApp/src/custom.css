@@ -87,6 +87,7 @@ nav {
 
 .fit-content {
     width: fit-content;
+    min-width: 20rem;
 }
 
 table {
