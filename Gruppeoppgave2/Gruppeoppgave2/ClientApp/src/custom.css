@@ -87,3 +87,15 @@ nav {
 table {
     width: 50rem !important;
 }
+
+@media only screen and (max-width: 1000px) {
+    table {
+        width: 40rem !important;
+    }
+}
+
+@media only screen and (max-width: 770px) {
+    table {
+        width: 30rem !important;
+    }
+}
