@@ -94,6 +94,10 @@ table {
     width: 50rem !important;
 }
 
+.cancelBtn {
+    margin-left: 16px;
+}
+
 @media only screen and (max-width: 1000px) {
     table {
         width: 40rem !important;

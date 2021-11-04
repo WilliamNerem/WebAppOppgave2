@@ -2,6 +2,7 @@
 import { InputField } from '../components/InputField';
 import { Timepicker } from '../components/Timepicker';
 import { Button } from '../components/Button';
+import { CancelButton } from './CancelButton';
 
 export function FormStrekning(props) {
     const [strekning, setStrekning] = useState();
@@ -11,7 +12,7 @@ export function FormStrekning(props) {
     const [errorTid, setErrorTid] = useState("");
     const [errorPris, setErrorPris] = useState("");
     const validStrekning = new RegExp('^[A-ZÆØÅ][a-zæøå]+ - [A-ZÆØÅ][a-zæøå]+$');
-    const validPris = new RegExp('^[0-9]{4}$');
+    const validPris = new RegExp('^[0-9]{1,4}$');
 
 
     function validateForm(e) {
@@ -51,6 +52,7 @@ export function FormStrekning(props) {
             <Timepicker oldTid={props.tidText} errorMsg={errorTid} state={setTid} name="Tid" label="Tid: " />
             <InputField text={props.prisText} errorMsg={errorPris} state={setPris} name="Pris" InputField="Pris: " />
             <Button text={props.btnText} />
+            <CancelButton />
         </form>
     );
 }
