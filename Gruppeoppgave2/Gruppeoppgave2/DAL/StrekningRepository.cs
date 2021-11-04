@@ -57,6 +57,7 @@ namespace Gruppeoppgave2.DAL
                     Tid = s.Tid,
                     Pris = s.Pris,
                 }).ToListAsync();
+                await _db.SaveChangesAsync();
                 return alleStrekninger;
             }
             catch (Exception e)
