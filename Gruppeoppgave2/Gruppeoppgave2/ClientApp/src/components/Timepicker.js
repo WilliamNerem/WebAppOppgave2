@@ -1,10 +1,10 @@
 ﻿import React, { useEffect, useState } from 'react';
 
 export function Timepicker(props) {
-    const [newValue, setNewValue] = useState(props.oldTime);
+    const [newValue, setNewValue] = useState(props.oldTid);
 
     useEffect(() => {
-        props.state(props.oldTime);
+        props.state(props.oldTid);
     }, []);
 
     function handleChange(value) {
