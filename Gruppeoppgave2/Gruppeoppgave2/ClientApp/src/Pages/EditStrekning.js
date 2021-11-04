@@ -48,7 +48,7 @@ export function EditStrekning() {
     }
 
     return (
-        <div>
+        <div className="fit-content m-auto">
             {ut}
         </div>
     );

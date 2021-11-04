@@ -37,10 +37,12 @@ export function Login() {
     }
 
     return (
-        <form onSubmit={checklogin}>
-            <InputField state={setUsername} name="Brukernavn" InputField="Brukernavn: " />
-            <InputFieldPassword errorMsg={error} state={setPassword} name="Passord" InputField="Passord: " />
-            <Button text="Logg Inn" />
-        </form>
+        <div className="fit-content m-auto">
+            <form onSubmit={checklogin}>
+                <InputField state={setUsername} name="Brukernavn" InputField="Brukernavn: " />
+                <InputFieldPassword errorMsg={error} state={setPassword} name="Passord" InputField="Passord: " />
+                <Button text="Logg Inn" />
+            </form>
+        </div>
     );
 }
