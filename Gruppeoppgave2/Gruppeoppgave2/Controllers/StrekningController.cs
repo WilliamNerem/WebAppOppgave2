@@ -108,20 +108,15 @@ namespace Gruppeoppgave2.Controllers
 
         public async Task<ActionResult> LoggInn(Admin admin)
         {
-            if (ModelState.IsValid)
+            bool returnOK = await _db.LoggInn(admin);
+            if (!returnOK)
             {
-                bool returnOK = await _db.LoggInn(admin);
-                if (!returnOK)
-                {
-                    _log.LogInformation("Innloggingen feilet for admin");
-                    HttpContext.Session.SetString(_loggetInn, _ikkeLoggetInn);
-                    return Ok(false);
-                }
-                HttpContext.Session.SetString(_loggetInn, _loggetInn);
-                return Ok(true);
+                _log.LogInformation("Innloggingen feilet");
+                HttpContext.Session.SetString(_loggetInn, _ikkeLoggetInn);
+                return Ok(false);
             }
-            _log.LogInformation("Feil i inputvalidering");
-            return BadRequest("Feil i inputvalidering på server");
+            HttpContext.Session.SetString(_loggetInn, _loggetInn);
+            return Ok(true);
         }
         public void LoggUt()
         {

@@ -156,9 +156,9 @@ namespace Gruppeoppgave2.DAL
             }
         }
 
-        public Boolean LoggUt()
+        public Task<bool> LoggUt()
         {
-            return true;
+            return Task.FromResult(true);
         }
     }
 }
