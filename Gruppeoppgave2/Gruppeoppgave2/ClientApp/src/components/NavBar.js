@@ -1,7 +1,7 @@
 ﻿import React, { useState, useEffect } from 'react';
 import $ from 'jquery';
 import Modal from './Modal';
-import img from '../img/Color_Line_color_horizontal.png'
+import img from '../img/Color_Line_color_horizontal.svg'
 
 export function NavBar() {
     const [loggedIn, setLoggedIn] = useState("Ikke logget inn");
@@ -18,9 +18,7 @@ export function NavBar() {
         if ((user !== null) && (user !== "null")) {
             setLoggedIn("Logget inn som: " + user);
             setLogOutButton(
-                <li className="nav-item">
-                    <button aria-current="page" data-bs-toggle="modal" data-bs-target="#logOutModal">Logg ut</button>
-                </li>
+                <button type="button" className="btn btn-info" aria-current="page" data-bs-toggle="modal" data-bs-target="#logOutModal">Logg ut</button>
                 );
         }
     }, []);
@@ -35,21 +33,23 @@ export function NavBar() {
     return (
         <nav className="navbar navbar-expand-lg navbar-light">
             <div className="container-fluid">
-                <a className="navbar-brand text-light" href="/"><img src={img} alt="" width="100" height="50" /></a>
+                <a className="navbar-brand bg-light" href="/departures">
+                    <img src={img} alt="Image of Color Line Logo" width="100" height="50" />
+                </a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul className="navbar-nav p-2">
+                    <ul className="navbar-nav">
                         <li className="nav-item">
-                            <a className="nav-link active text-light" aria-current="page" href="/">Hjem</a>
+                            <a className="nav-link active text-light" aria-current="page" href="/departures">Hjem</a>
                         </li>
                         <li className="nav-item">
                             <a className="nav-link active text-light" aria-current="page" href="/departures">Strekninger</a>
                         </li>
-                    </ul>
-                    <ul className="navbar-nav p-2">
-                        <p className="text-light">{loggedIn}</p>
+                        <li className="nav-item">
+                            <a className="nav-link active text-light">{loggedIn}</a>
+                        </li>
                         {logOutButton}
                     </ul>
                 </div>
